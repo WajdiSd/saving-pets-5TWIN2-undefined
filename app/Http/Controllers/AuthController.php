@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     //
-    public function index()
+    public function signin()
     {
-        return view('Auth/login');
+        return view('Auth/signin');
+    }
+
+    public function signup() {
+        return view('Auth/signup');
     }
 }
