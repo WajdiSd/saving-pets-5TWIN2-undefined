@@ -12,4 +12,9 @@ class Pet extends Model
     {
         return $this->belongsTo(Sterilization::class);
     }
+
+    public function vaccines()
+    {
+        return $this->belongsToMany(Vaccine::class);
+    }
 }
