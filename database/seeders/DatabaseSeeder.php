@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             PetSeeder::class,
             VeterinarianSeeder::class,
             SterilizationSeeder::class,
+            TypeVaccineSeeder::class,
+            VaccineSeeder::class,
         ]);
     }
 }
