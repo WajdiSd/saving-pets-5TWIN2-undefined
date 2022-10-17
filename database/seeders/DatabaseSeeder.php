@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
             SterilizationSeeder::class,
             TypeVaccineSeeder::class,
             VaccineSeeder::class,
+            AssociationSeeder::class,
+            EventSeeder::class,
         ]);
     }
 }
