@@ -6,12 +6,14 @@
 .menu .app-brand.demo {
   height: 64px;
   margin-top: 12px;
+  padding-right: auto;
 }
 
 .app-brand-logo.demo svg {
-  width: 22px;
-  height: 38px;
+  width: 150px;
+  height: 250px!important;
 }
+
 
 .app-brand-text.demo {
   font-size: 1.75rem;
