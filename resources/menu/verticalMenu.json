@@ -40,6 +40,165 @@
       ]
     },
     {
+      "menuHeader": "Validation"
+    },
+    {
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Users",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Pets",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Pets",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Associations",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Associations",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Users",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Sterilization",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Sterilization",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Cages",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Cages",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Veterinarian",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Veterinarian",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Locaux",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Locaux",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Type Vaccines",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Type Vaccines",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Vaccines",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Vaccines",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Events",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Reward Types",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Reward Types",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Rewards",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/table",
+          "name": "List Rewards",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
       "menuHeader": "Pages"
     },
     {
