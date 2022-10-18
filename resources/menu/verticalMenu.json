@@ -180,7 +180,7 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/typerewards",
           "name": "List Reward Types",
           "slug": "pages-account-settings-account"
         }
