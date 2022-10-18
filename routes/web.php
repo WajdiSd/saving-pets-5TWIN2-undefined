@@ -19,7 +19,10 @@ $controller_path = 'App\Http\Controllers';
 Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 
 // backoffice routes
-Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('11');
+Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('backoffice-table');
+
+// frontoffice routes
+Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class , 'index'] )->name('frontoffice');
 
 
 // layout
