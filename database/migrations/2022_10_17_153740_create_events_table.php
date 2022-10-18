@@ -13,14 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            Schema::defaultStringLength(191) ;
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->unsignedBigInteger('association_id')->nullable();
+            $table->string("name",20);
+            $table->string("description", 50);
+            $table->dateTime("dateDeb");
+            $table->dateTime("dateFin");
+
+            //relation 
+            $table->foreign('association_id')->references('id')->on('associations');
+
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('events');
     }
 };

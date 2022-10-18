@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            Schema::defaultStringLength(191) ;
+        Schema::create('vaccine_pet', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->unsignedBigInteger('pet_id');
+            $table->unsignedBigInteger('vaccine_id');
+            $table->foreign('vaccine_id')
+                ->references('id')->on('vaccines');
+            $table->foreign('pet_id')
+                ->references('id')->on('pets');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('vaccine_pet');
     }
 };
