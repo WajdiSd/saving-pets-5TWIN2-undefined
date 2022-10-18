@@ -37,7 +37,7 @@ class AssociationController extends Controller
             
             ]);
         $association = \App\Models\Association::create($request->all());
-        return redirect()->route('content.backoffice.Association.index');
+        return redirect()->route('association.index');
     }
 
     //Delete :
@@ -46,8 +46,7 @@ class AssociationController extends Controller
     {
         $association = \App\Models\Association::find($id) ;
         $association->delete() ;
-        return redirect()->route('content.backoffice.Association.index')
-            ->with('success','Association deleted successfully.') ;
+        return redirect()->route('association.index');
     }
 
     //Edit prod:
@@ -63,7 +62,7 @@ class AssociationController extends Controller
         $association = ['name'=>$request->name,'description'=>$request->description,'rib'=>$request->rib];
 
             \App\Models\Association::whereId($id)->update($association) ;
-        return  redirect()->route('content.backoffice.Association.index') ;
+        return  redirect()->route('association.index') ;
 
     }
     //Show selected :
@@ -82,8 +81,9 @@ class AssociationController extends Controller
                         $associationEvents=$associationEvents+1;
                     }
             }
-        $pourcentageEvents = $associationEvents*100/$totalEvents;
-            
+        if ($totalEvents > 0)
+        {$pourcentageEvents = $associationEvents*100/$totalEvents;}
+        else  $pourcentageEvents = 0;
 
         return view('content.backoffice.Association.show', compact('association','pourcentageEvents'));
 
