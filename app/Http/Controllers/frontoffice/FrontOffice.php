@@ -9,6 +9,6 @@ class FrontOffice extends Controller
 {
   public function index()
   {
-    return view('frontoffice.home');
+    return view('content.frontoffice.home');
   }
 }
