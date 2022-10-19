@@ -17,23 +17,31 @@ $navbarHideToggle = false;
 
 
 <!-- Grid Card -->
-<h6 class="pb-1 mb-4 text-muted">Grid Card</h6>
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
   <div class="col">
     <div class="card h-100">
-      <img class="card-img-top" src="{{asset('assets/img/elements/2.jpg')}}" alt="Card image cap" />
+      <img class="card-img-top" src="{{asset('assets/img/wiggler/AssociationFront2.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">
+        <a href="{{ route('association.index') }}"> 
+          <button type="button" class="btn btn-success">Associations</button>
+        </a> 
+
+        </h5>
+        <p class="card-text"> Associations working with the aim of saving, caring for, helping and rehabilitating animals of different species in need,
+        leading efforts to elevate the global pet care community and promote responsible pet ownership.
+        </p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-      <img class="card-img-top" src="{{asset('assets/img/elements/13.jpg')}}" alt="Card image cap" />
+      <img class="card-img-top" src="{{asset('assets/img/wiggler/EventFront.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <a href="{{ route('event.index') }}"> 
+        <h5 class="card-title"><button type="button" class="btn btn-danger">Events</button></h5>
+      </a>
+        <p class="card-text">Planned public or social occasion to raise awareness, to help animals... organized by associations</p>
       </div>
     </div>
   </div>
