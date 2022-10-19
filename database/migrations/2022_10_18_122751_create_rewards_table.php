@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('rewards', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('type_rewards_id')->nullable();
             $table->string('name');
             $table->integer('quantity');
             $table->timestamps();
+            $table->foreign('type_rewards_id')->references('id')->on('type_rewards');
+
         });
     }
 
