@@ -27,8 +27,8 @@ Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\Type
 
 // frontoffice routes
 Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class , 'index'] )->name('frontoffice');
-Route::resource('/frontoffice/association',\App\Http\Controllers\frontoffice\Association\AssociationController::class);
-Route::resource('/frontoffice/event',\App\Http\Controllers\frontoffice\Association\EventController::class);
+Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class , 'index'] )->name('frontofficeassociation');
+Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class , 'index'] )->name('frontofficeevent');
 
 
 // layout

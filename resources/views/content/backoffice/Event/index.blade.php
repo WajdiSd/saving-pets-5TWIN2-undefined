@@ -89,9 +89,8 @@
           <td>{{$event->description}}</td>
           <td><span class="badge bg-label-success me-1">{{$event->dateDeb}}</span></td>
           <td><span class="badge bg-label-danger me-1">{{$event->dateFin}}</span></td>
-          <td>
             <td><span class="badge bg-label-danger me-1">{{$event->association_id}}</span></td>
-          </td>
+          
 
           <td>
             <div class="dropdown">

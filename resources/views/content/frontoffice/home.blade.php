@@ -23,7 +23,7 @@ $navbarHideToggle = false;
       <img class="card-img-top" src="{{asset('assets/img/wiggler/AssociationFront2.jpg')}}" alt="Card image cap" />
       <div class="card-body">
         <h5 class="card-title">
-        <a href="{{ route('association.index') }}"> 
+        <a href="frontoffice/association"> 
           <button type="button" class="btn btn-success">Associations</button>
         </a> 
 
@@ -38,7 +38,7 @@ $navbarHideToggle = false;
     <div class="card h-100">
       <img class="card-img-top" src="{{asset('assets/img/wiggler/EventFront.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-      <a href="{{ route('event.index') }}"> 
+      <a href="frontoffice/event"> 
         <h5 class="card-title"><button type="button" class="btn btn-danger">Events</button></h5>
       </a>
         <p class="card-text">Planned public or social occasion to raise awareness, to help animals... organized by associations</p>

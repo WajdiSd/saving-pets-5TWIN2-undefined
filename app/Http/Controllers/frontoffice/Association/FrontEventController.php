@@ -5,7 +5,7 @@ namespace App\Http\Controllers\frontoffice\Association;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class EventController extends Controller
+class FrontEventController extends Controller
 {
     public function index()
     {           
