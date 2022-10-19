@@ -38,13 +38,9 @@
                 <a class="dropdown-item" href="{{ route('association.show',$association->id) }}"><i class="bx bx-edit-alt me-1"></i> Show</a>
                 <a class="dropdown-item" href="{{ route('association.edit',$association->id) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                 <form action="{{ route('association.destroy',$association->id) }}" method="POST">
-                                    @csrf
+                @csrf
                                     @method('DELETE')
-                      
-                      <a class="dropdown-item" href="{{ route('association.destroy',$association->id) }}"><i class="bx bx-trash me-1"></i>
-                      <button type="button" class="btn btn-danger btn-sm">Delete association</button>
-
-                      </a>
+                                    <button type="submit" class="btn btn-outline-danger">Delete association</button>
                 </form>
               </div>
             </div>

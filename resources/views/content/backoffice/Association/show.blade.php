@@ -20,10 +20,15 @@
 
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Association /</span> Show
+       
+      <a href="{{ route('association.edit',$association->id) }}"> 
+          <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
+      </a>
+                
 </h4>
 
-
 <div class="row">
+<p></p>
   <div class="col-lg-8 mb-4 order-0">
     <div class="card">
       <div class="d-flex align-items-end row">

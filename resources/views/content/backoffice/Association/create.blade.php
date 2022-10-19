@@ -50,4 +50,10 @@
     </div>
   </div>
 </div>
+
+<p></p><p></p><p></p>
+<a href="{{ route('association.index') }}"> 
+  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+</a>
+
 @endsection
