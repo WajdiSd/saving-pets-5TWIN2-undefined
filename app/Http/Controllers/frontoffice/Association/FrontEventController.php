@@ -38,12 +38,4 @@ class FrontEventController extends Controller
         return view('content.frontoffice.Event.index', compact("listevents"));
         }
 
-    //Show selected prod:
-    //show : gère l affichage de la page d un produit
-    public function show($id)
-    {
-        $event =  \App\Models\Event::find($id) ;// on utilise si paramètre est id fonctionnel
-        return view('content.frontoffice.Event.index', compact('event'));
-
-    }
 }
