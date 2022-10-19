@@ -42,7 +42,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Add</button>
+              <button type="submit" class="btn btn-success">Add association</button>
             </div>
           </div>
         </form>
