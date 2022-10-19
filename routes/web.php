@@ -23,6 +23,8 @@ Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::cla
 Route::resource('/backoffice/association',\App\Http\Controllers\backoffice\Association\AssociationController::class);
 Route::resource('/backoffice/event',\App\Http\Controllers\backoffice\Association\EventController::class);
 
+Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
+Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
 
 // frontoffice routes
 Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class , 'index'] )->name('frontoffice');
