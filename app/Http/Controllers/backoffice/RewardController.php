@@ -26,7 +26,19 @@ class RewardController extends Controller
      */
     public function create()
     {
-        return view('rewards.create');
+        return view('content.backoffice.reward.create-reward');
+    }
+
+    /**
+     * Delete a specific reward.
+     *
+     * @param int $id
+     */
+    public function destroy($id)
+    {
+        $reward = Reward::find($id);
+        $reward->delete();
+        return redirect()->route('rewards.index');
     }
 
     /**
@@ -47,19 +59,9 @@ class RewardController extends Controller
         $reward->quantity = $request->input('quantity');
         $reward->save();
 
-        return redirect('/rewards')->with('success', 'Reward Created');
+        return redirect('/backoffice/rewards')->with('success', 'Reward Created');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Reward  $reward
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Reward $reward)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -69,7 +71,7 @@ class RewardController extends Controller
      */
     public function edit(Reward $reward)
     {
-        return view('rewards.edit', compact('reward'));
+        return view('content.backoffice.reward.edit-reward', compact('reward'));
     }
 
     /**
@@ -90,7 +92,7 @@ class RewardController extends Controller
         $reward->quantity = $request->input('quantity');
         $reward->save();
 
-        return redirect('/rewards')->
+        return redirect('backoffice/rewards')->
         with('success', 'Reward Updated');
     }
 }

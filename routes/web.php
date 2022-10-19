@@ -21,8 +21,8 @@ Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboar
 // backoffice routes
 Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('backoffice-table');
 
-Route::get('/backoffice/rewards', [\App\Http\Controllers\backoffice\RewardController::class , 'index'] )->name('backoffice-rewards');
-Route::get('/backoffice/typerewards', [\App\Http\Controllers\backoffice\TypeRewardController::class , 'index'] )->name('backoffice-typerewards');
+Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
+Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
 
 
 // frontoffice routes
