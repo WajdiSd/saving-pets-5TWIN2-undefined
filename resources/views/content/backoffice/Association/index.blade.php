@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Tables - Basic Tables')
+@section('title', 'Wiggler - Associations')
 
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
