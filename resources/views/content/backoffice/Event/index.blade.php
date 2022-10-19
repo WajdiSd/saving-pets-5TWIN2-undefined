@@ -6,7 +6,7 @@
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Events /</span> List Events
 
-  <a href="{{ route('association.create') }}"> 
+  <a href="{{ route('event.create') }}"> 
   <button type="button" class="btn btn-success" style="float: right;">Add event</button>
 </a>
 </h4>
