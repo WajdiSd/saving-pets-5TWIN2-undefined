@@ -20,6 +20,8 @@ Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboar
 
 // backoffice routes
 Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('backoffice-table');
+Route::resource('/backoffice/association',\App\Http\Controllers\backoffice\Association\AssociationController::class);
+Route::resource('/backoffice/event',\App\Http\Controllers\backoffice\Association\EventController::class);
 
 Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
 Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
