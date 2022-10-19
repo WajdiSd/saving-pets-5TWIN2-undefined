@@ -12,4 +12,9 @@ class Reward extends Model {
         'name',
         'quantity'
     ];
+
+    public function typeReward()
+    {
+        return $this->belongsTo(TypeReward::class);
+    }
 }
