@@ -10,11 +10,13 @@ class EventController extends Controller
     public function index()
     {           $listevents = \App\Models\Event::all();
 
-        /*$nbreEventMax = 0;
+        $nbreEventMax = 0;
         $associationMAX = '';
+        $totalAssociation= 0;
         //La majorite des evenement sont organises par :X ASSOCIATION
         $listassociations = \App\Models\Association::all();
         foreach ($listassociations as $association) {
+            $totalAssociation= $totalAssociation+1;
             $nbreEventCourant = 0;
             foreach ($listevents as $event) {
                     if ($event->association_id == $association->id) {
@@ -25,8 +27,8 @@ class EventController extends Controller
                 $nbreEventMax=$nbreEventCourant;
                 $associationMAX = $association->name;
             }
-        }*/
-        return view('content.backoffice.Event.index', compact("listevents"));
+        }
+        return view('content.backoffice.Event.index', compact("listevents","associationMAX","nbreEventMax","totalAssociation"));
     }
     //Get all prods:
     // affiche : gère l affichage de la page de listing des produits

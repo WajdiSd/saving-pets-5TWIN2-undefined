@@ -82,7 +82,7 @@
   <button type="button" class="btn btn-success" style="float: right;"> Go to EVENTS</button>
 </a>
 <a href="{{ route('association.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+  <button type="button" class="btn btn-secondary" style="float: left;">Go to ASSOCIATIONS</button>
 </a>
 
 @endsection

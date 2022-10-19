@@ -54,6 +54,6 @@
   <button type="button" class="btn btn-success" style="float: right;"> Go to ASSOCIATIONS</button>
 </a>
 <a href="{{ route('event.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+  <button type="button" class="btn btn-secondary" style="float: left;">Go to EVENTS</button>
 </a>
 @endsection
