@@ -99,7 +99,7 @@
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('event.show',$event->id) }}"><i class="bx bx-edit-alt me-1"></i> Show</a>
+                <a class="dropdown-item" href="{{ route('event.show',$event->id) }}"><i class="bx bx-detail me-1"></i> Show</a>
                 <a class="dropdown-item" href="{{ route('event.edit',$event->id) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                 <form action="{{ route('event.destroy',$event->id) }}" method="POST">
                 @csrf

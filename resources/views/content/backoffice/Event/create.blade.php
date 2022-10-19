@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 form-label" for="basic-icon-default-phone">Description</label>
+            <label class="col-sm-2 form-label" for="basic-icon-comment">Description</label>
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-credit-card-front"></i></span>
@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 form-label" for="basic-icon-default-message">Start Date</label>
+            <label class="col-sm-2 form-label" for="basic-icon-time-five">Start Date</label>
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 form-label" for="basic-icon-default-message">End Date</label>
+            <label class="col-sm-2 form-label" for="basic-icon-time-five">End Date</label>
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
