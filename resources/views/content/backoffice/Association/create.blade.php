@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Wiggles - Add association')
+@section('title', 'Wiggler - Add association')
 
 @section('content')
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Association/</span> Add</h4>
@@ -42,7 +42,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Add</button>
+              <button type="submit" class="btn btn-success">Add association</button>
             </div>
           </div>
         </form>
@@ -53,7 +53,7 @@
 
 <p></p><p></p><p></p>
 <a href="{{ route('association.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+  <button type="button" class="btn btn-secondary" style="float: left;">Go to ASSOCIATIONS</button>
 </a>
 
 @endsection

@@ -42,7 +42,7 @@
         </div>
         <div class="col-sm-5 text-center text-sm-left">
           <div class="card-body pb-0 px-0 px-md-4">
-            <img src="{{asset('assets/img/wiggler/association.png')}}" height="150" alt="Association" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
+            <img src="{{asset('assets/img/wiggler/association.png')}}" height="150" alt="Association">
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
             <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
               <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                 <div class="card-title">
-                  <span class="badge bg-label-warning rounded-pill">Events </span>
+                  <span class="badge bg-label-warning rounded-pill" >Events </span>
                 </div>
                 <div class="mt-sm-auto">
                   <h3 class="mb-0">{{$pourcentageEvents}} %</h3>
@@ -78,8 +78,11 @@
   </div>
 </div>
 <p></p><p></p><p></p>
+<a href="{{ route('event.index') }}"> 
+  <button type="button" class="btn btn-success" style="float: right;"> Go to EVENTS</button>
+</a>
 <a href="{{ route('association.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+  <button type="button" class="btn btn-secondary" style="float: left;">Go to ASSOCIATIONS</button>
 </a>
 
 @endsection

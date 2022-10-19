@@ -8,12 +8,15 @@ use App\Http\Controllers\Controller;
 class EventController extends Controller
 {
     public function index()
-    {   $nbreEventMax = 0;
+    {           $listevents = \App\Models\Event::all();
+
+        $nbreEventMax = 0;
         $associationMAX = '';
+        $totalAssociation= 0;
         //La majorite des evenement sont organises par :X ASSOCIATION
         $listassociations = \App\Models\Association::all();
-        $listevents = \App\Models\Event::all();
         foreach ($listassociations as $association) {
+            $totalAssociation= $totalAssociation+1;
             $nbreEventCourant = 0;
             foreach ($listevents as $event) {
                     if ($event->association_id == $association->id) {
@@ -25,7 +28,7 @@ class EventController extends Controller
                 $associationMAX = $association->name;
             }
         }
-        return view('content.backoffice.Event.index', compact("listevents","associationMAX"));
+        return view('content.backoffice.Event.index', compact("listevents","associationMAX","nbreEventMax","totalAssociation"));
     }
     //Get all prods:
     // affiche : gère l affichage de la page de listing des produits
@@ -56,7 +59,7 @@ class EventController extends Controller
     ];
         \App\Models\Event::whereId($event1->id)->update($event2) ;
 
-        return redirect()->route('content.backoffice.Event.index');
+        return redirect()->route('event.index');
         
         
     }
@@ -66,10 +69,8 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = \App\Models\Event::find($id) ;
-        //var_dump($product);
         $event->delete() ;
-        return redirect()->route('content.backoffice.Event.index')
-            ->with('success','Event deleted successfully.') ;
+        return redirect()->route('event.index');
     }
 
     //Edit prod:
@@ -91,7 +92,7 @@ class EventController extends Controller
         ];
 
         \App\Models\Event::whereId($id)->update($event) ;
-        return  redirect()->route('content.backoffice.Event.index') ;
+        return  redirect()->route('event.index') ;
 
     }
     //Show selected prod:
