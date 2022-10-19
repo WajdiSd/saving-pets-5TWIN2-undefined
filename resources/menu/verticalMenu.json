@@ -68,12 +68,24 @@
     },
     {
       "name": "Associations",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "icon": "menu-icon tf-icons bx bx bx-home-heart",
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/association",
           "name": "List Associations",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "icon": "menu-icon tf-icons bx bx bx-calendar-event",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/event",
+          "name": "List Events",
           "slug": "pages-account-settings-account"
         }
       ]
@@ -158,18 +170,6 @@
         {
           "url": "/backoffice/table",
           "name": "List Vaccines",
-          "slug": "pages-account-settings-account"
-        }
-      ]
-    },
-    {
-      "name": "Events",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
-      "submenu": [
-        {
-          "url": "/backoffice/table",
-          "name": "List Events",
           "slug": "pages-account-settings-account"
         }
       ]
