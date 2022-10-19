@@ -6,7 +6,7 @@
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Events /</span> List Events
 
-  <a href="{{ route('event.create') }}"> 
+  <a href="{{ route('event.create') }}">
   <button type="button" class="btn btn-success" style="float: right;">Add event</button>
 </a>
 </h4>
@@ -18,7 +18,7 @@
         <div class="col-sm-7">
           <div class="card-body">
             <h5 class="card-title text-primary"> The MOST active association ! 🎉</h5>
-            <p class="mb-4">The association <span class="fw-bold">" {{$associationMAX}} "</span> 
+            <p class="mb-4">The association <span class="fw-bold">" {{$associationMAX}} "</span>
                   has organized the majority of the events below.</p>
 
             <a href="{{ route('association.index') }}" class="btn btn-sm btn-outline-primary">View Associations</a>
@@ -63,7 +63,7 @@
         </div>
       </div>
     </div>
-  </div>      
+  </div>
 </div>
 
 
@@ -78,7 +78,7 @@
         <th>Start date</th>
         <th>End date</th>
         <th>ASSOCIATION</th>
-          
+
         <th>Action</th>
         </tr>
       </thead>
@@ -89,10 +89,8 @@
           <td>{{$event->description}}</td>
           <td><span class="badge bg-label-success me-1">{{$event->dateDeb}}</span></td>
           <td><span class="badge bg-label-danger me-1">{{$event->dateFin}}</span></td>
-          <td> 
-          <a href="{{ route('association.show',$event->association_id) }}"><i class="bx bx-link-external me-1"></i>
-                {{ \App\Models\Association::where(['id' => $event->association_id])->pluck('name')->first() }}
-            </a>
+          <td>
+            <td><span class="badge bg-label-danger me-1">{{$event->association_id}}</span></td>
           </td>
 
           <td>
