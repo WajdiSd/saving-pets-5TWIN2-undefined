@@ -22,6 +22,14 @@
               </div>
             </div>
           </div>
+          <div class="row mb-3">
+            <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+            <div class="col-sm-10">
+              @error('name')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+            </div>
+          </div>
 
           <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-comment">Address :</label>
@@ -30,6 +38,14 @@
                 <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-pin"></i></span>
                 <input type="text" class="form-control" placeholder="Veterinarian's address" name="address" id="address" />
               </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+            <div class="col-sm-10">
+              @error('address')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
 
@@ -42,6 +58,14 @@
               </div>
             </div>
           </div>
+          <div class="row mb-3">
+            <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+            <div class="col-sm-10">
+              @error('phone')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+            </div>
+          </div>
 
           <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-comment">Email :</label>
@@ -50,6 +74,14 @@
                 <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-at"></i></span>
                 <input type="email" class="form-control" placeholder="Veterinarian's email" name="email" id="email" />
               </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+            <div class="col-sm-10">
+              @error('email')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
 

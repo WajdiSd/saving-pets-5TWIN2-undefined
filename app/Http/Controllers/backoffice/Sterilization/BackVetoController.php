@@ -19,7 +19,8 @@ class BackVetoController extends Controller
     {
         $veto = \App\Models\Veterinarian::find($id);
         $veto->delete();
-        return redirect()->route('veterinarian.index');
+        return redirect()->route('veterinarian.index')
+            ->with('danger', 'Veterinarian deleted successfully.');
     }
 
     public function create()
@@ -29,8 +30,16 @@ class BackVetoController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|alpha|unique:veterinarians,name',
+            'address' => 'required|max:255|unique:veterinarians,address',
+            'phone' => 'required|Numeric|digits:8|unique:veterinarians,phone',
+            'email' => 'required|email|unique:veterinarians,email',
+        ]);
+
         \App\Models\Veterinarian::create($request->all());
-        return redirect()->route('veterinarian.index');
+        return redirect()->route('veterinarian.index')
+            ->with('success', 'Veterinarian created successfully.');
     }
 
     public function edit($id)
@@ -41,9 +50,17 @@ class BackVetoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|alpha',
+            'address' => 'required|max:255',
+            'phone' => 'required|Numeric|digits:8',
+            'email' => 'required|email',
+        ]);
+
         $veto = ['name' => $request->name, 'address' => $request->address, 'phone' => $request->phone, 'email' => $request->email];
         \App\Models\Veterinarian::whereId($id)->update($veto);
-        return  redirect()->route('veterinarian.index');
+        return  redirect()->route('veterinarian.index')
+            ->with('info', 'Veterinarian updated successfully.');
     }
 
     //show : gère l affichage de la page d un produit
