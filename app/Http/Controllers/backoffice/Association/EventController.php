@@ -49,7 +49,14 @@ class EventController extends Controller
     //2 * Save() : la fonction qui permet d’ajouter un nouveau enregistrement dans la base.
     public function store(Request $request)
     {
-        //  $validated= $request->validated();
+        //  $validated= $request->validated()
+
+        $request->validate([
+            'name' => 'required|max:20',
+            'description' => 'required|max:50',
+            'dateDeb' => 'required|date',
+            'dateFin' => 'required|date|after_or_equal:dateDeb',
+        ]);
 
         $event1 = \App\Models\Event::create($request->all());
         // $product->categorie_id  = $request->categorie_id;
@@ -84,6 +91,13 @@ class EventController extends Controller
     // 2 * update : va contenir toute la partie modification de la donnée
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|max:20',
+            'description' => 'required|max:50',
+            'dateDeb' => 'required|date',
+            'dateFin' => 'required|date|after_or_equal:dateDeb',
+        ]);
+
         $associations = \App\Models\Association::all();
         $event = [
             'name' => $request->name, 'description' => $request->description,
