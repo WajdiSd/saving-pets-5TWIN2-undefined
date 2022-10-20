@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreign('pet_id')
                 ->references('id')->on('pets');
             $table->foreign('veto_id')
-                ->references('id')->on('veterinarians');
+                ->references('id')->on('veterinarians')->onDelete('set null');
             $table->timestamps();
         });
     }

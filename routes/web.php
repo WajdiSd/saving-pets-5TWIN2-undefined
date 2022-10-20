@@ -27,6 +27,8 @@ Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\Type
 
 //Sterilization
 Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class);
+//Veterinarian
+Route::resource('/backoffice/veterinarian', \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class);
 
 /* ####################################################################################### */
 

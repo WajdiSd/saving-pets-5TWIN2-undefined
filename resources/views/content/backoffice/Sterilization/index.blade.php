@@ -42,7 +42,12 @@
         @foreach($listeSterilizations as $sterilization)
         <tr>
           <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$sterilization->pet->name}}</strong></td>
-          <td>{{$sterilization->veterinarian->name}}</td>
+          <td>
+            @if ($sterilization->veterinarian != null)
+            {{$sterilization->veterinarian->name}}
+            @else Deleted.
+            @endif
+          </td>
           <td><span class="badge bg-label-success me-1">{{$sterilization->fee}}&nbsp;<i class="bx bx-dollar-circle me-1"></i>
             </span></td>
           <td>{{ date('d-m-Y', strtotime($sterilization->date))   }}</td>
