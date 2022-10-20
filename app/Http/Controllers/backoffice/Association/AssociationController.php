@@ -32,8 +32,9 @@ class AssociationController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required|max:50',
-            'rib' => 'rib'
+            'rib' => 'required|max:20'
             ]);
+
         $association = \App\Models\Association::create($request->all());
         return redirect()->route('association.index');
     }
@@ -57,6 +58,12 @@ class AssociationController extends Controller
     // 2 * update : va contenir toute la partie modification de la donnée
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required|max:50',
+            'rib' => 'required|max:20'
+            ]);
+
         $association = ['name'=>$request->name,'description'=>$request->description,'rib'=>$request->rib];
 
             \App\Models\Association::whereId($id)->update($association) ;

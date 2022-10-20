@@ -23,6 +23,14 @@
             </div>
           </div>
           <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('name')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
+          </div>
+          <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-comment">Description</label>
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
@@ -30,6 +38,14 @@
                 <input type="text" class="form-control" placeholder="Event's description" name="description" id="description"/>
               </div>
             </div>
+          </div>
+          <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('description')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
           </div>
           <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-time-five">Start Date</label>
@@ -41,6 +57,14 @@
             </div>
           </div>
           <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('dateDeb')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
+          </div>
+          <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-time-five">End Date</label>
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
@@ -48,6 +72,14 @@
                 <input type="datetime-local" class="form-control" placeholder="Event's end date" name="dateFin" id="dateFin"/>
               </div>
             </div>
+          </div>
+          <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('dateFin')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
           </div>
           <div class="row mb-3">
             <label class="col-sm-2 form-label" for="association_id">Organised by association :</label>
