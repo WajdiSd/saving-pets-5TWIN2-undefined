@@ -23,18 +23,16 @@ class AssociationController extends Controller
     //Add 
     //1 * Create() : gère l affichage de la page de création 
     public function create()
-    {
+    {   
         return view('content.backoffice.Association.create');
     }
     //2 * Save() : la fonction qui permet d’ajouter un nouveau enregistrement dans la base.
     public function store(Request $request)
     {
         $request->validate([
-
             'name' => 'required',
-            
             'description' => 'required|max:50',
-            
+            'rib' => 'rib'
             ]);
         $association = \App\Models\Association::create($request->all());
         return redirect()->route('association.index');
