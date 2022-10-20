@@ -85,6 +85,7 @@
             <label class="col-sm-2 form-label" for="association_id">Organised by association :</label>
             <div class="col-sm-10">
             <select class="form-select" id="association_id" name="association_id">
+                                    <option selected="selected">This event is organised by the association : </option>
                                       @foreach($associations as $association)
                                           <option value="{{ $association->id }}">
                                               {{ $association->name }}</option>
