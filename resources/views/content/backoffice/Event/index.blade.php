@@ -92,8 +92,9 @@
            
           <td>
           @if (empty($event->association_id))       
-          <a href="{{ route('event.edit',$event->id) }}"><i class="bx bx-no-entry me-1"></i>
-                None,Add Association
+          <a href="{{ route('event.edit',$event->id) }}">
+          <font color="red"> <i class="bx bx-no-entry me-1"></i>
+            None,Add Association </font>
             </a>
           @else   
             <a href="{{ route('association.show',$event->association_id) }}"><i class="bx bx-link-external me-1"></i>
