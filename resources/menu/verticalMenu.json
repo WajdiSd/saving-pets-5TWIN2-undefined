@@ -108,7 +108,7 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/sterilization",
           "name": "List Sterilization",
           "slug": "pages-account-settings-account"
         }
@@ -132,7 +132,7 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/veterinarian",
           "name": "List Veterinarian",
           "slug": "pages-account-settings-account"
         }

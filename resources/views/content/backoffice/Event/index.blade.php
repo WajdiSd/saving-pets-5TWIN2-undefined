@@ -89,8 +89,19 @@
           <td>{{$event->description}}</td>
           <td><span class="badge bg-label-success me-1">{{$event->dateDeb}}</span></td>
           <td><span class="badge bg-label-danger me-1">{{$event->dateFin}}</span></td>
-            <td><span class="badge bg-label-danger me-1">{{$event->association_id}}</span></td>
-          
+           
+          <td>
+          @if (empty($event->association_id))       
+          <a href="{{ route('event.edit',$event->id) }}">
+          <font color="red"> <i class="bx bx-no-entry me-1"></i>
+            None,Add Association </font>
+            </a>
+          @else   
+            <a href="{{ route('association.show',$event->association_id) }}"><i class="bx bx-link-external me-1"></i>
+                {{ \App\Models\Association::where(['id' => $event->association_id])->pluck('name')->first() }}
+            </a>
+          @endif
+          </td>
 
           <td>
             <div class="dropdown">

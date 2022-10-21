@@ -22,6 +22,16 @@
               </div>
             </div>
           </div>
+
+          <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('name')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
+          </div>
+
           <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-default-phone">RIB</label>
             <div class="col-sm-10">
@@ -32,6 +42,14 @@
             </div>
           </div>
           <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('rib')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
+          </div>
+          <div class="row mb-3">
             <label class="col-sm-2 form-label" for="basic-icon-default-message">Description</label>
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
@@ -39,6 +57,14 @@
                 <textarea class="form-control" placeholder="Association's Description" name="description" id="description"></textarea>
               </div>
             </div>
+          </div>
+          <div class="row mb-3">
+          <label class="col-sm-2 form-label" for="basic-icon-default-message"></label>
+              <div class="col-sm-10">
+              @error('description')
+                      <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+              </div>
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
