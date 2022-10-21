@@ -75,7 +75,7 @@ class BackSterilizationController extends Controller
         \App\Models\Pet::whereId($sterilization->pet_id)->update($pet);
         $sterilization->delete();
         return redirect()->route('sterilization.index')
-            ->with('danger', 'Vterilization deleted successfully.');
+            ->with('warning', 'Vterilization deleted successfully.');
     }
 
     //show : gère l affichage de la page d un produit
