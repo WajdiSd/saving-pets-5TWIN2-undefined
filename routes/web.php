@@ -24,6 +24,8 @@ Route::resource('/backoffice/association',\App\Http\Controllers\backoffice\Assoc
 Route::resource('/backoffice/event',\App\Http\Controllers\backoffice\Association\EventController::class);
 Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
 Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
+Route::resource('/backoffice/vaccines',\App\Http\Controllers\backoffice\Vaccination\VaccineController::class);
+Route::resource('/backoffice/typevaccines',\App\Http\Controllers\backoffice\Vaccination\TypeVaccineController::class);
 
 // frontoffice routes
 Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class , 'index'] )->name('frontoffice');
