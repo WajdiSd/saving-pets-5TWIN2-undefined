@@ -26,9 +26,29 @@ Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardCo
 Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
 
 //Sterilization
-Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class);
+Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
+    'names' => [
+        'index' => 'sterilization.index',
+        'create' => 'sterilization.create',
+        'edit' => 'sterilization.edit',
+        'show' => 'sterilization.show',
+        // etc...
+    ]
+]);
 //Veterinarian
-Route::resource('/backoffice/veterinarian', \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class);
+Route::resource(
+    '/backoffice/veterinarian',
+    \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class,
+    [
+        'names' => [
+            'index' => 'veterinarian.index',
+            'create' => 'veterinarian.create',
+            'edit' => 'veterinarian.edit',
+            'show' => 'veterinarian.show',
+            // etc...
+        ]
+    ]
+);
 
 /* ####################################################################################### */
 
@@ -38,6 +58,11 @@ Route::resource('/backoffice/veterinarian', \App\Http\Controllers\backoffice\Ste
 Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
 Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
 Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
+
+//Sterilization
+Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
+
+
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
 Route::get('/layouts/without-navbar', $controller_path . '\layouts\WithoutNavbar@index')->name('layouts-without-navbar');

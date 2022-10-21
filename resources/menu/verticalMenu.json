@@ -105,12 +105,12 @@
     {
       "name": "Sterilization",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
+      "slug": "sterilization",
       "submenu": [
         {
           "url": "/backoffice/sterilization",
           "name": "List Sterilization",
-          "slug": "pages-account-settings-account"
+          "slug": "sterilization.index"
         }
       ]
     },
@@ -129,12 +129,12 @@
     {
       "name": "Veterinarian",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
+      "slug": "veterinarian",
       "submenu": [
         {
           "url": "/backoffice/veterinarian",
           "name": "List Veterinarian",
-          "slug": "pages-account-settings-account"
+          "slug": "veterinarian.index"
         }
       ]
     },

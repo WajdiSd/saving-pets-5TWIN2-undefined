@@ -13,6 +13,12 @@ class BackVetoController extends Controller
         return view('content.backoffice.Veterinarian.index', compact("listeVetos"));
     }
 
+    public function front()
+    {
+        $listeVetos = \App\Models\Veterinarian::all();
+        return view('content.frontoffice.Sterilization.index', compact("listeVetos"));
+    }
+
     //Delete prod:
     // destroy : gère la suppression d un produit.
     public function destroy($id)
@@ -20,7 +26,7 @@ class BackVetoController extends Controller
         $veto = \App\Models\Veterinarian::find($id);
         $veto->delete();
         return redirect()->route('veterinarian.index')
-            ->with('danger', 'Veterinarian deleted successfully.');
+            ->with('warning', 'Veterinarian deleted successfully.');
     }
 
     public function create()
