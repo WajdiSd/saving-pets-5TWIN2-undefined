@@ -156,7 +156,7 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/typevaccines",
           "name": "List Type Vaccines",
           "slug": "pages-account-settings-account"
         }

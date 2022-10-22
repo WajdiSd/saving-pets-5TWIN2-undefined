@@ -2,91 +2,77 @@
 
 namespace App\Http\Controllers\backoffice\Vaccination;
 
+use App\Models\TypeVaccine;
+use App\Models\Vaccine;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TypeVaccineController extends Controller
 {
-    public function index()
-    {
-        $listevaccine = \App\Models\Vaccine::all();
-        return view('content.backoffice.Vaccine.index', compact("listevaccine"));
-    }
-    //Get all :
-    // affiche : gère l affichage de la page de listing
-    public function affiche()
-        {
-        $listevaccine = \App\Models\Vaccine::all();
-        return view('content.backoffice.Vaccine.index', compact("listevaccine"));
-        }
+  public function index()
+  {
+    $listetypevaccine = TypeVaccine::all();
+    return view('content.backoffice.Typevaccine.index', compact("listetypevaccine"));
+  }
+  //Get all :
+  // affiche : gère l affichage de la page de listing
+  public function affiche()
+  {
+    $listetypevaccine = TypeVaccine::all();
+    return view('content.backoffice.Typevaccine.index', compact("listetypevaccine"));
+  }
 
-    //Add
-    //1 * Create() : gère l affichage de la page de création
-    public function create()
-    {
-        return view('content.backoffice.Vaccine.create');
-    }
-    //2 * Save() : la fonction qui permet d’ajouter un nouveau enregistrement dans la base.
-    public function store(Request $request)
-    {
-        $request->validate([
+  //Add
+  //1 * Create() : gère l affichage de la page de création
+  public function create()
+  {
 
-            'name' => 'required',
+    return view('content.backoffice.Typevaccine.create');
+  }
+  //2 * Save() : la fonction qui permet d’ajouter un nouveau enregistrement dans la base.
+  public function store(Request $request)
+  {
+    $request->validate([
 
-            'description' => 'required|max:50',
+      'type' => 'required|max:50',
 
-            ]);
-        $association = \App\Models\Association::create($request->all());
-        return redirect()->route('association.index');
-    }
+      'duration' => 'required',
+    ]);
 
-    //Delete :
-    // destroy : gère la suppression
-    public function destroy($id)
-    {
-        $association = \App\Models\Association::find($id) ;
-        $association->delete() ;
-        return redirect()->route('association.index');
-    }
+    TypeVaccine::create($request->all());
+    return redirect()->route('typevaccines.index');
+  }
 
-    //Edit prod:
-    // 1 * edit : va servir à afficher la vue et à transmettre des données si nécessaire.
-    public function edit($id)
-    {
-        $association =  \App\Models\Association::find($id);
-        return view('content.backoffice.Association.edit', compact('association'));
-    }
-    // 2 * update : va contenir toute la partie modification de la donnée
-    public function update(Request $request, $id)
-    {
-        $association = ['name'=>$request->name,'description'=>$request->description,'rib'=>$request->rib];
+  //Delete :
+  // destroy : gère la suppression
+  public function destroy($id)
+  {
+    $typevaccine = TypeVaccine::find($id) ;
+    $typevaccine->delete() ;
+    return redirect()->route('typevaccines.index');
+  }
 
-            \App\Models\Association::whereId($id)->update($association) ;
-        return  redirect()->route('association.index') ;
+  //Edit prod:
+  // 1 * edit : va servir à afficher la vue et à transmettre des données si nécessaire.
+  public function edit($id)
+  {
+    $typevaccine = TypeVaccine::find($id) ;
+    return view('content.backoffice.Typevaccine.edit', compact('typevaccine'));
+  }
+  // 2 * update : va contenir toute la partie modification de la donnée
+  public function update(Request $request, $id)
+  {
+    $typevaccine = ['type' => $request->type, 'duration' => $request->duration];
 
-    }
-    //Show selected :
-    //show : gère l affichage d un element selectionne
-    public function show($id)
-    {
-        $association =  \App\Models\Association::find($id) ;// on utilise si paramètre est id fonctionnel
-        //Pourcentage des events crees par cette association
-        $totalEvents = 0;
-        $associationEvents = 0;
-        $listevents = \App\Models\Event::all();
-            //Get total events
-            foreach ($listevents as $event) {
-                $totalEvents=$totalEvents+1;
-                    if ($event->association_id == $id) {
-                        $associationEvents=$associationEvents+1;
-                    }
-            }
-        if ($totalEvents > 0)
-        {$pourcentageEvents = $associationEvents*100/$totalEvents;}
-        else  $pourcentageEvents = 0;
+    TypeVaccine::whereId($id)->update($typevaccine) ;
+    return  redirect()->route('typevaccines.index') ;
 
-        return view('content.backoffice.Association.show', compact('association','pourcentageEvents'));
-
-
-    }
+  }
+  //Show selected :
+  //show : gère l affichage d un element selectionne
+  public function show($id)
+  {
+    $typevaccine = TypeVaccine::find($id) ;
+    return view('content.backoffice.Typevaccine.show', compact('typevaccine'));
+  }
 }

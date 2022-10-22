@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Wiggler - Vaccine')
+@section('title', 'Wiggler - Type Vaccine')
 
 
 @section('vendor-style')
@@ -19,9 +19,9 @@
 @section('content')
 
 <h4 class="fw-bold py-3 mb-4">
-  <span class="text-muted fw-light">Vaccine /</span> Show
+  <span class="text-muted fw-light">Type Vaccine /</span> Show
 
-      <a href="{{ route('vaccines.edit',$vaccine->id) }}">
+      <a href="{{ route('typevaccines.edit',$typevaccine->id) }}">
           <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
       </a>
 
@@ -34,10 +34,9 @@
       <div class="d-flex align-items-end row">
         <div class="col-sm-7">
           <div class="card-body">
-            <h5 class="card-title text-primary">Name : {{$vaccine->name}}</h5>
-            <p class="mb-4"><span class="fw-bold">Validity : </span>{{$vaccine->validity}}</p>
+            <h5 class="card-title text-primary">Type : {{$typevaccine->type}}</h5>
+            <p class="mb-4"><span class="fw-bold">Duration : </span>{{$typevaccine->duration}}</p>
             <p class="mb-4"></p>
-            <span class="badge bg-label-success me-1">Type : {{$vaccine->typevaccine->type}}</span>
           </div>
         </div>
       </div>

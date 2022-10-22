@@ -11,7 +11,6 @@ class VaccineController extends Controller
     public function index()
     {
         $listevaccine = Vaccine::all();
-      error_log($listevaccine);
         return view('content.backoffice.Vaccine.index', compact("listevaccine"));
     }
     //Get all :
