@@ -19,16 +19,18 @@ $controller_path = 'App\Http\Controllers';
 Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 
 // backoffice routes
-Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('backoffice-table');
-Route::resource('/backoffice/association',\App\Http\Controllers\backoffice\Association\AssociationController::class);
-Route::resource('/backoffice/event',\App\Http\Controllers\backoffice\Association\EventController::class);
-Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
-Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
+Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class, 'index'])->name('backoffice-table');
+Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Association\AssociationController::class);
+Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
+Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
+Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
+Route::resource('/backoffice/locals', \App\Http\Controllers\backoffice\LocalController::class);
+Route::resource('/backoffice/enclos', \App\Http\Controllers\backoffice\EnclosController::class);
 
 // frontoffice routes
-Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class , 'index'] )->name('frontoffice');
-Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class , 'index'] )->name('frontofficeassociation');
-Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class , 'index'] )->name('frontofficeevent');
+Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
+Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
+Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
 
 
 // layout
