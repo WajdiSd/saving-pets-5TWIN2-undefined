@@ -10,9 +10,8 @@ class Enclos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'breed',
+        'race',
         'capacity',
-        'status'
     ];
 
     public function local()
