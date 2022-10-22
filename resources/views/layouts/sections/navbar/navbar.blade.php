@@ -36,19 +36,29 @@ $navbarDetached = ($navbarDetached ?? '');
 
       <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
-        <div class="navbar-nav align-items-center">
-          <div class="nav-item d-flex align-items-center">
-            <i class="bx bx-search fs-4 lh-0"></i>
-            <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search...">
+
+        @if (str_contains(Route::currentRouteName(), 'frontoffice'))
+        <!--//TODO -->
+
+        <nav class="navbar navbar-example navbar-expand-lg ">
+          <div class="container-fluid">
+            <span class="app-brand-logo demo">
+              @include('_partials.wiggler')
+            </span>
+
+            <div class="collapse navbar-collapse" id="navbar-ex-3">
+              <div class="navbar-nav me-auto">
+                <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+                <a class="nav-item nav-link active" href="{{url('frontoffice/veterinarian')}}">Veterinarian</a>
+              </div>
+            </div>
           </div>
-        </div>
+        </nav>
+        @endif
         <!-- /Search -->
         <ul class="navbar-nav flex-row align-items-center ms-auto">
 
-          <!-- Place this tag where you want the button to render. -->
-          <li class="nav-item lh-1 me-3">
-            <a class="github-button" href="https://github.com/themeselection/sneat-html-laravel-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-laravel-admin-template-free on GitHub">Star</a>
-          </li>
+
 
           <!-- User -->
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
