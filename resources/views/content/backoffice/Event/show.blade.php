@@ -36,7 +36,19 @@
           <div class="card-body">
             <h5 class="card-title text-primary">{{$event->name}}</h5>
             <p class="mb-4"><span class="fw-bold">Description : </span>{{$event->description}}</p>
-            <p class="mb-4"></p>
+            <p class="mb-4">
+              
+          @if (empty($event->association_id))       
+              <a href="{{ route('event.edit',$event->id) }}">
+              <font color="red"> <i class="bx bx-no-entry me-1"></i>
+                None,Add Association </font>
+                </a>
+              @else   
+                <a href="{{ route('association.show',$event->association_id) }}"><i class="bx bx-link-external me-1"></i>
+                    {{ \App\Models\Association::where(['id' => $event->association_id])->pluck('name')->first() }}
+                </a>
+          @endif
+            </p>
             <span class="badge bg-label-success me-1">Start date : {{$event->dateDeb}}</span>
             
             <span class="badge bg-label-danger me-1">End date : {{$event->dateFin}}</span>

@@ -46,7 +46,7 @@ $container = ($container ?? 'container-xxl');
           @else
           <div class="{{$container}} flex-grow-1 container-p-y">
             @endif
-
+            @include('layouts.flash-message')
             @yield('content')
 
             <!-- pricingModal -->

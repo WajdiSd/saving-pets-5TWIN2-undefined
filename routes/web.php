@@ -24,13 +24,51 @@ Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Asso
 Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
 Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
 Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
+<<<<<<< HEAD
 Route::resource('/backoffice/locals', \App\Http\Controllers\backoffice\LocalController::class);
 Route::resource('/backoffice/enclos', \App\Http\Controllers\backoffice\EnclosController::class);
+=======
+
+//Sterilization
+Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
+    'names' => [
+        'index' => 'sterilization.index',
+        'create' => 'sterilization.create',
+        'edit' => 'sterilization.edit',
+        'show' => 'sterilization.show',
+        // etc...
+    ]
+]);
+//Veterinarian
+Route::resource(
+    '/backoffice/veterinarian',
+    \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class,
+    [
+        'names' => [
+            'index' => 'veterinarian.index',
+            'create' => 'veterinarian.create',
+            'edit' => 'veterinarian.edit',
+            'show' => 'veterinarian.show',
+            // etc...
+        ]
+    ]
+);
+
+/* ####################################################################################### */
+
+
+>>>>>>> 06da1f8df96446c12b07f667ea19c172d3ac6815
 
 // frontoffice routes
 Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
 Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
 Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
+<<<<<<< HEAD
+=======
+
+//Sterilization
+Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
+>>>>>>> 06da1f8df96446c12b07f667ea19c172d3ac6815
 
 
 // layout

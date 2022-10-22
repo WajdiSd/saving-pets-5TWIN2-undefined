@@ -9,13 +9,16 @@ class Sterilization extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['fee', 'remarks', 'date', 'pet_id', 'veto_id'];
+
+
     public function pet()
     {
-        return $this->hasOne(Pet::class);
+        return $this->hasOne(Pet::class, "sterilization_id", "pet_id");
     }
 
     public function veterinarian()
     {
-        return $this->belongsTo(Veterinarian::class);
+        return $this->belongsTo(Veterinarian::class, "veto_id");
     }
 }
