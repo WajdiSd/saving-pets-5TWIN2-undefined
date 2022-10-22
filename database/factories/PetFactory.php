@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Enclos;
 use App\Models\Pet;
 use App\Models\Sterilization;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,8 +24,8 @@ class PetFactory extends Factory
             'type' => $this->faker->text(5),
             'race' => $this->faker->text(5),
             'age' => $this->faker->randomNumber(2),
-            'sterilization_id' => 1,
             'captureDate' => now(),
+            'enclos_id' => Enclos::inRandomOrder()->first()->id,
         ];
     }
 }

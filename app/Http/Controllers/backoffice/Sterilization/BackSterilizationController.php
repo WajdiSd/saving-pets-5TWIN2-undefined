@@ -9,13 +9,14 @@ class BackSterilizationController extends Controller
 {
     public function index()
     {
-        $listeSterilizations = \App\Models\Sterilization::all();
+        $listeSterilizations = \App\Models\Sterilization::with(['pet'])->get();
         return view('content.backoffice.Sterilization.index', compact("listeSterilizations"));
     }
 
     public function create()
     {
-        $pets = \App\Models\Pet::where('sterilization_id', null)->get();
+        // get all pets with no relation to sterilization
+        $pets = \App\Models\Pet::doesntHave('sterilization')->get();
         $veterinarians = \App\Models\Veterinarian::all();
         $sterilization = \App\Models\Sterilization::all();
         return view('content.backoffice.Sterilization.create', compact('sterilization', 'pets', 'veterinarians'));
@@ -33,9 +34,6 @@ class BackSterilizationController extends Controller
         ]);
 
         $sterilization = \App\Models\Sterilization::create($request->all());
-        $pet = \App\Models\Sterilization::find($sterilization->pet_id);
-        $pet['sterilization_id'] = $sterilization->id;
-        \App\Models\Pet::whereId($sterilization->pet_id)->update($pet);
 
         return redirect()->route('sterilization.index')
             ->with('success', 'Vterilization added successfully.');
@@ -43,16 +41,17 @@ class BackSterilizationController extends Controller
 
     public function edit($id)
     {
+        $pets = \App\Models\Pet::doesntHave('sterilization')->get();
         $veterinarians = \App\Models\Veterinarian::all();
         $sterilization = \App\Models\Sterilization::find($id);
-        return view('content.backoffice.Sterilization.edit', compact('sterilization', 'veterinarians'));
+        return view('content.backoffice.Sterilization.edit', compact('sterilization', 'veterinarians', 'pets'));
     }
 
     public function update(Request $request, $id)
     {
 
         $request->validate([
-            'pet_id' => 'required|unique:pets,id',
+            'pet_id' => 'required',
             'veto_id' => 'required',
             'fee' => 'required|Numeric',
             'date' => 'required|date|after_or_equal:today',
@@ -70,9 +69,6 @@ class BackSterilizationController extends Controller
     public function destroy($id)
     {
         $sterilization = \App\Models\Sterilization::find($id);
-        $pet = \App\Models\Sterilization::find($sterilization->pet_id);
-        $pet['sterilization_id'] = null;
-        \App\Models\Pet::whereId($sterilization->pet_id)->update($pet);
         $sterilization->delete();
         return redirect()->route('sterilization.index')
             ->with('warning', 'Vterilization deleted successfully.');

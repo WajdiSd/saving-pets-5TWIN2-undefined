@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pets', function (Blueprint $table) {
+        Schema::create('enclos', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("type");
-            $table->string("race");
-            $table->integer("age");
-            $table->date("captureDate");
+            $table->unsignedBigInteger('local_id')->nullable();
+            $table->string("race", 20);
+            $table->integer("capacity");
+
+            //relation 
+            $table->foreign('local_id')->references('id')->on('locals')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pets');
+        Schema::dropIfExists('enclos');
     }
 };

@@ -2,13 +2,16 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff'])            </a>
             </a>
         </x-slot>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
-
+        <a href="{{url('/register')}}" style="color: green" >
+                <button type="button" class="btn btn-success" style="float: right;">Create an account</button>
+                </a>
+        </br>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

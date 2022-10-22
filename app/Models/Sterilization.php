@@ -14,7 +14,7 @@ class Sterilization extends Model
 
     public function pet()
     {
-        return $this->hasOne(Pet::class, "sterilization_id", "pet_id");
+        return $this->belongsTo(Pet::class, "pet_id");
     }
 
     public function veterinarian()

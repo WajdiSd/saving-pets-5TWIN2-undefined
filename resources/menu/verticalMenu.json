@@ -144,8 +144,20 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/locals",
           "name": "List Locaux",
+          "slug": "pages-account-settings-account"
+        }
+      ]
+    },
+    {
+      "name": "Enclos",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/backoffice/enclos",
+          "name": "List Enclos",
           "slug": "pages-account-settings-account"
         }
       ]
