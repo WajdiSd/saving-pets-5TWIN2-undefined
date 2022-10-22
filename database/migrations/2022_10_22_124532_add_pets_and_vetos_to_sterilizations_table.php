@@ -13,18 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sterilizations', function (Blueprint $table) {
-            $table->id();
+        Schema::table('sterilizations', function (Blueprint $table) {
             $table->unsignedBigInteger('pet_id');
-            $table->unsignedBigInteger('veto_id');
-            $table->double("fee");
-            $table->string("remarks", 255);
-            $table->dateTime("date");
+            $table->unsignedBigInteger('veto_id')->nullable();
             $table->foreign('pet_id')
                 ->references('id')->on('pets');
             $table->foreign('veto_id')
                 ->references('id')->on('veterinarians')->onDelete('set null');
-            $table->timestamps();
         });
     }
 
@@ -35,6 +30,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sterilizations');
+        Schema::table('sterilizations', function (Blueprint $table) {
+            //
+        });
     }
 };
