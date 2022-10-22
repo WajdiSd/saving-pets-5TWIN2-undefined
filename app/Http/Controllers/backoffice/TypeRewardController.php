@@ -47,7 +47,13 @@ class TypeRewardController extends Controller
     $typeReward->description = $request->input('description');
     $typeReward->save();
 
-    return redirect('/type-rewards')->with('success', 'Type Reward Created');
+    return redirect('/backoffice/typerewards')->with('success', 'Type Reward Created');
+  }
+
+  public function destroy ($id) {
+    $typeReward = TypeReward::find($id);
+    $typeReward->delete();
+    return redirect('/backoffice/typerewards')->with('success', 'Type Reward Deleted');
   }
 
   /**
@@ -69,6 +75,20 @@ class TypeRewardController extends Controller
    */
   public function edit(TypeReward $typeReward)
   {
-    return view('content.backoffice.type-reward.type-reward-edit', compact('typeReward'));
+    return view('content.backoffice.reward.edit-type-reward', compact('typeReward'));
+  }
+
+  public function update(Request $request, TypeReward $tr)
+  {
+    $this->validate($request, [
+      'type' => 'required',
+      'description' => 'required'
+    ]);
+
+    $tr->type = $request->input('type');
+    $tr->description = $request->input('description');
+    $tr->save();
+
+    return redirect('/backoffice/typerewards')->with('success', 'Type Reward Updated');
   }
 }

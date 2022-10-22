@@ -58,7 +58,7 @@ Route::resource(
 Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
 Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
 Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
-
+Route::get('/frontoffice/reward', [\App\Http\Controllers\frontoffice\Reward\FrontRewardController::class, 'index'])->name('frontofficerewards');
 //Sterilization
 Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
 
