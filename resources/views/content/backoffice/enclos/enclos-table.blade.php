@@ -27,7 +27,7 @@
           <th scope="row">{{ $enclos->id }}</th>
           <td>{{ $enclos->race }}</td>
           <td>{{ $enclos->capacity }}</td>
-          <td>{{ $enclos->local_id }}</td>
+          <td>{{ $enclos->local->name }}</td>
           <td>
             <a href="{{ route('enclos.edit',$enclos->id) }}" class="btn btn-primary">Edit</a>
             <form action="{{ route('enclos.destroy',$enclos->id) }}" method="POST" class="d-inline">

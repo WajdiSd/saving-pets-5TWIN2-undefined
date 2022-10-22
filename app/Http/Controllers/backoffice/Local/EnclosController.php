@@ -15,7 +15,7 @@ class EnclosController extends Controller
      */
     public function index()
     {
-        $enclos = Enclos::all();
+        $enclos = Enclos::with('local')->get();
         return view('content.backoffice.enclos.enclos-table', compact('enclos'));
     }
 

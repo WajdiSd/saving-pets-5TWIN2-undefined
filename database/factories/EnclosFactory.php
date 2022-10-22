@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Local;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,6 +20,7 @@ class EnclosFactory extends Factory
         return [
             'race' => $this->faker->text(10),
             'capacity' => $this->faker->numberBetween(1, 50),
+            'local_id' => Local::inRandomOrder()->first()->id,
 
         ];
     }

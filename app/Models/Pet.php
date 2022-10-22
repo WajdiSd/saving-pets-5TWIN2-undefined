@@ -10,7 +10,7 @@ class Pet extends Model
     use HasFactory;
     public function sterilization()
     {
-        return $this->belongsTo(Sterilization::class);
+        return $this->hasOne(Sterilization::class);
     }
     public function enclos()
     {

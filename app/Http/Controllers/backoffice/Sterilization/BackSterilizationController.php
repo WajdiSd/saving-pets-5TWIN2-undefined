@@ -9,7 +9,7 @@ class BackSterilizationController extends Controller
 {
     public function index()
     {
-        $listeSterilizations = \App\Models\Sterilization::all();
+        $listeSterilizations = \App\Models\Sterilization::with('pet')->get();
         return view('content.backoffice.Sterilization.index', compact("listeSterilizations"));
     }
 
