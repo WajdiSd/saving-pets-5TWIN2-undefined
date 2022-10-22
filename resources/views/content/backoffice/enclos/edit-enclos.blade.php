@@ -7,7 +7,7 @@
 
 <div class="card">
   <div class="card-body">
-    <form method="POST" action="{{ route('enclos.update', $enclos->id) }}">
+    <form method="POST" action="{{ route('enclos.update', $enclos) }}">
       @csrf
       @method('PUT')
       <div class="mb-3">
@@ -23,7 +23,7 @@
         <div class="col-sm-10">
         <select class="form-select" id="local_id" name="local_id">
             @foreach($locals as $local)
-              <selected option="{{ $event->local_id }}">
+              <selected option="{{ $enclos->local_id }}">
                 <option value="{{ $local->id }}">
                     {{ $local->name }}
                 </option>

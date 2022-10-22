@@ -8,14 +8,14 @@
 <div class="card">
   <h5 class="card-header">Enclos</h5>
   <a href="{{ route('enclos.create') }}">
-  <button type="button" class="btn btn-success" style="float: right;">Add enclos</button>
-</a>
+    <button type="button" class="btn btn-success" style="float: right;">Add enclos</button>
+  </a>
   <div class="table-responsive text-nowrap">
     <table class="table">
       <thead class="table-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
+          <th scope="col">Race</th>
           <th scope="col">Capacity</th>
           <th scope="col">Local</th>
           <th scope="col">Action</th>
@@ -25,7 +25,7 @@
         @foreach ($enclos as $enclos)
         <tr>
           <th scope="row">{{ $enclos->id }}</th>
-          <td>{{ $enclos->name }}</td>
+          <td>{{ $enclos->race }}</td>
           <td>{{ $enclos->capacity }}</td>
           <td>{{ $enclos->local_id }}</td>
           <td>

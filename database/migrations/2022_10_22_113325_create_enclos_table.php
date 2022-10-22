@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('local_id')->nullable();
             $table->string("race", 20);
-            $table->integer("capacity", 50);
+            $table->integer("capacity");
 
             //relation 
-            $table->foreign('local_id')->references('id')->on('locals');
+            $table->foreign('local_id')->references('id')->on('locals')->onDelete('cascade');
 
             $table->timestamps();
         });

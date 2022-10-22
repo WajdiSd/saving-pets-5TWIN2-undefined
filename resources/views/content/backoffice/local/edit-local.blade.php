@@ -18,9 +18,11 @@
         <label for="address" class="form-label">Address</label>
         <input type="text" class="form-control" id="address" name="address" value="{{ $local->address }}">
       </div>
-      <div class="mb-3">
-        <label for="status" class="form-label">Is active?</label>
-        <input type="text" class="form-control" id="status" name="status" value="" checked="{{ $local->status === true }}">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="check" id="status" name="status" checked>
+        <label class="form-check-label" for="status">
+          Is Active
+        </label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

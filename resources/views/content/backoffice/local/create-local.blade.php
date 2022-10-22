@@ -20,7 +20,7 @@
         <input type="text" class="form-control" id="address" name="address" value="">
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="status" name="stats" checked>
+        <input class="form-check-input" type="checkbox" value="check" id="status" name="status" checked>
         <label class="form-check-label" for="status">
           Is Active
         </label>

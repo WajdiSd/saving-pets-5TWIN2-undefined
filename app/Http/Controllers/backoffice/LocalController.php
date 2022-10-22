@@ -52,13 +52,12 @@ class LocalController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'address' => 'required',
-            'status' => 'required'
         ]);
 
         $local = new Local;
         $local->name = $request->input('name');
-        $local->address = $request->input('address');
-        $local->status = $request->input('status');
+        $local->address = str_replace(',', '', $request->input('address'));
+        $local->status =  null !== $request->input('status');
 
         $local->save();
 
@@ -84,18 +83,18 @@ class LocalController extends Controller
      * @param  \App\Models\Local  $local
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Local $local)
+    public function update(Request $request, $local)
     {
         $this->validate($request, [
             'name' => 'required',
             'address' => 'required',
-            'status' => 'required'
         ]);
+        $newLocal = \App\Models\Local::find($local);
 
-        $local->name = $request->input('name');
-        $local->address = $request->input('address');
-        $local->status = $request->input('status');
-        $local->save();
+        $newLocal->name = $request->input('name');
+        $newLocal->address = str_replace(',', '', $request->input('address'));
+        $newLocal->status =  null !== $request->input('status');
+        $newLocal->update();
 
         return redirect('backoffice/locals')->with('success', 'Local Updated');
     }

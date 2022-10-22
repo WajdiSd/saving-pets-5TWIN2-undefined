@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             VaccineSeeder::class,
             AssociationSeeder::class,
             EventSeeder::class,
+            LocalSeeder::class,
+            EnclosSeeder::class,
         ]);
     }
 }

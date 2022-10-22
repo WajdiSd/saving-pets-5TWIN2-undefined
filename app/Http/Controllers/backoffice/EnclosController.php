@@ -26,7 +26,8 @@ class EnclosController extends Controller
      */
     public function create()
     {
-        return view('content.backoffice.enclos.create-enclos');
+        $locals = \App\Models\Local::all();
+        return view('content.backoffice.enclos.create-enclos', compact('locals'));
     }
 
     /**
@@ -58,7 +59,7 @@ class EnclosController extends Controller
         $enclos = new Enclos;
         $enclos->race = $request->input('race');
         $enclos->capacity = $request->input('capacity');
-        $enclos->local = $request->input('local_id');
+        $enclos->local_id = $request->input('local_id');
         $enclos->save();
 
         return redirect('/backoffice/enclos')->with('success', 'Enclos Created');
@@ -71,9 +72,11 @@ class EnclosController extends Controller
      * @param  \App\Models\Enclos  $enclos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Enclos $enclos)
+    public function edit($enclos)
     {
-        return view('content.backoffice.enclos.edit-enclos', compact('enclos'));
+        $locals = \App\Models\Local::all();
+        $enclos =  \App\Models\Enclos::find($enclos);
+        return view('content.backoffice.enclos.edit-enclos', compact('enclos', 'locals'));
     }
 
     /**
@@ -83,18 +86,21 @@ class EnclosController extends Controller
      * @param  \App\Models\Enclos  $enclos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Enclos $enclos)
+    public function update(Request $request, $enclos)
     {
         $this->validate($request, [
             'race' => 'required',
             'capacity' => 'required',
             'local_id' => 'required'
         ]);
+        $newEnclos = \App\Models\Enclos::find($enclos);
 
-        $enclos->race = $request->input('race');
-        $enclos->capacity = $request->input('capacity');
-        $enclos->local = $request->input('local_id');
-        $enclos->save();
+        $newEnclos->race = $request->input('race');
+        $newEnclos->capacity = $request->input('capacity');
+        $newEnclos->local_id = $request->input('local_id');
+
+
+        $newEnclos->update();
 
         return redirect('backoffice/enclos')->with('success', 'Enclos Updated');
     }
