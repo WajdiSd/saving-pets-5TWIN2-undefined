@@ -16,19 +16,51 @@ use Illuminate\Support\Facades\Route;
 $controller_path = 'App\Http\Controllers';
 
 // Main Page Route
-Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
+//Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 
 // backoffice routes
-Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('backoffice-table');
-Route::resource('/backoffice/association',\App\Http\Controllers\backoffice\Association\AssociationController::class);
-Route::resource('/backoffice/event',\App\Http\Controllers\backoffice\Association\EventController::class);
-Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
-Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
+Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class, 'index'])->name('backoffice-table');
+Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Association\AssociationController::class);
+Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
+Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
+Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
+
+//Sterilization
+Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
+    'names' => [
+        'index' => 'sterilization.index',
+        'create' => 'sterilization.create',
+        'edit' => 'sterilization.edit',
+        'show' => 'sterilization.show',
+        // etc...
+    ]
+]);
+//Veterinarian
+Route::resource(
+    '/backoffice/veterinarian',
+    \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class,
+    [
+        'names' => [
+            'index' => 'veterinarian.index',
+            'create' => 'veterinarian.create',
+            'edit' => 'veterinarian.edit',
+            'show' => 'veterinarian.show',
+            // etc...
+        ]
+    ]
+);
+
+/* ####################################################################################### */
+
+
 
 // frontoffice routes
-Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class , 'index'] )->name('frontoffice');
-Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class , 'index'] )->name('frontofficeassociation');
-Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class , 'index'] )->name('frontofficeevent');
+Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
+Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
+Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
+
+//Sterilization
+Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
 
 
 // layout
@@ -44,6 +76,18 @@ Route::get('/pages/account-settings-notifications', $controller_path . '\pages\A
 Route::get('/pages/account-settings-connections', $controller_path . '\pages\AccountSettingsConnections@index')->name('pages-account-settings-connections');
 Route::get('/pages/misc-error', $controller_path . '\pages\MiscError@index')->name('pages-misc-error');
 Route::get('/pages/misc-under-maintenance', $controller_path . '\pages\MiscUnderMaintenance@index')->name('pages-misc-under-maintenance');
+
+// Breeze authentication
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 // authentication
 Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');
