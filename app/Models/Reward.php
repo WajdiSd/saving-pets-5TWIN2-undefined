@@ -10,7 +10,8 @@ class Reward extends Model {
 
     protected $fillable = [
         'name',
-        'quantity'
+        'quantity',
+        'typeReward'
     ];
 
     public function typeReward()
