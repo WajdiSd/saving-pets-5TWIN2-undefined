@@ -12,6 +12,10 @@ class Pet extends Model
     {
         return $this->belongsTo(Sterilization::class);
     }
+    public function enclos()
+    {
+        return $this->belongsTo(Enclos::class);
+    }
 
     public function vaccines()
     {
