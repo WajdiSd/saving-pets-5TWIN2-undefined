@@ -19,10 +19,11 @@ return new class extends Migration
             $table->unsignedBigInteger('veto_id');
             $table->double("fee");
             $table->string("remarks", 255);
+            $table->dateTime("date");
             $table->foreign('pet_id')
                 ->references('id')->on('pets');
             $table->foreign('veto_id')
-                ->references('id')->on('veterinarians');
+                ->references('id')->on('veterinarians')->onDelete('set null');
             $table->timestamps();
         });
     }
