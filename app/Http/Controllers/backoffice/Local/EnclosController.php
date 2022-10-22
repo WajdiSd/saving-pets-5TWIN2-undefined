@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backoffice;
+namespace App\Http\Controllers\backoffice\Local;
 
 use App\Models\Enclos;
 use App\Http\Controllers\Controller;
@@ -51,8 +51,8 @@ class EnclosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'race' => 'required',
-            'capacity' => 'required',
+            'race' => 'required|unique:enclos|max:20',
+            'capacity' => 'required|numeric|min:1|max:50',
             'local_id' => 'required'
         ]);
 
@@ -89,8 +89,8 @@ class EnclosController extends Controller
     public function update(Request $request, $enclos)
     {
         $this->validate($request, [
-            'race' => 'required',
-            'capacity' => 'required',
+            'race' => 'required|max:20',
+            'capacity' => 'required|numeric|min:1|max:50',
             'local_id' => 'required'
         ]);
         $newEnclos = \App\Models\Enclos::find($enclos);

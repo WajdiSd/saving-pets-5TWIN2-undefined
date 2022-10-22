@@ -19,7 +19,7 @@ return new class extends Migration
 
             //relation 
             $table->foreign('enclos_id')->references('id')->on('enclos')->onDelete('set null');
-            $table->foreign('sterilization_id')->references('id')->on('sterilizations');
+            $table->foreign('sterilization_id')->references('id')->on('sterilizations')->onDelete('set null');
         });
     }
 

@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('sterilizations', function (Blueprint $table) {
-            $table->unsignedBigInteger('pet_id');
+            $table->unsignedBigInteger('pet_id')->nullable();
             $table->unsignedBigInteger('veto_id')->nullable();
             $table->foreign('pet_id')
-                ->references('id')->on('pets');
+                ->references('id')->on('pets')->onDelete('set null');
             $table->foreign('veto_id')
                 ->references('id')->on('veterinarians')->onDelete('set null');
         });

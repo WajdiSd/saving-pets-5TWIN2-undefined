@@ -21,15 +21,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-            PetSeeder::class,
             VeterinarianSeeder::class,
-            SterilizationSeeder::class,
             TypeVaccineSeeder::class,
             VaccineSeeder::class,
             AssociationSeeder::class,
             EventSeeder::class,
             LocalSeeder::class,
             EnclosSeeder::class,
+            SterilizationSeeder::class,
+            PetSeeder::class,
         ]);
     }
 }

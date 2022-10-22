@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backoffice;
+namespace App\Http\Controllers\backoffice\Local;
 
 use App\Models\Local;
 use App\Http\Controllers\Controller;
@@ -50,8 +50,8 @@ class LocalController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'address' => 'required',
+            'name' => 'required|max:50',
+            'address' => 'required|max:100',
         ]);
 
         $local = new Local;
@@ -86,8 +86,8 @@ class LocalController extends Controller
     public function update(Request $request, $local)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'address' => 'required',
+            'name' => 'required|max:50',
+            'address' => 'required|max:100',
         ]);
         $newLocal = \App\Models\Local::find($local);
 

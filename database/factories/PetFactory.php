@@ -23,7 +23,7 @@ class PetFactory extends Factory
             'type' => $this->faker->text(5),
             'race' => $this->faker->text(5),
             'age' => $this->faker->randomNumber(2),
-            'sterilization_id' => 1,
+            // 'sterilization_id' => 1,
             'captureDate' => now(),
         ];
     }
