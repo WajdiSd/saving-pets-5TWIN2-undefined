@@ -10,7 +10,7 @@
 <h5 class="pb-1 mb-4">Associations</h5>
 <div class="row mb-5">
 @foreach($listeassociations as $association)
-  <div class="col-md">
+  <div class="col-md-3">
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
@@ -22,7 +22,7 @@
             <p class="card-text">
             {{$association->description}}
             </p>
-            <p class="card-text"><small class="text-muted">{{$association->rib}}</small></p>
+            <span class="badge bg-label-success me-1">{{$association->rib}}</span>          
           </div>
         </div>
       </div>
