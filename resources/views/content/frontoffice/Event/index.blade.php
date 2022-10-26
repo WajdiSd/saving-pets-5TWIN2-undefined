@@ -1,16 +1,13 @@
 @extends('content/frontoffice/home')
 @section('content')
-
-<a href="/frontoffice"> 
-          <button type="button" class="btn btn-success" style="float: right;">Home Page</button>
-        </a> 
+<x-app-layout>
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Wiggler / HomePage </span> / Association</h4>
 
 <!-- Horizontal -->
 <h5 class="pb-1 mb-4">Events</h5>
 <div class="row mb-5">
 @foreach($listevents as $event)
-  <div class="col-md">
+  <div class="col-md-3">
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
@@ -32,4 +29,6 @@
   @endforeach
 </div>
 <!--/ Horizontal -->
+</x-app-layout>
+
 @endsection
