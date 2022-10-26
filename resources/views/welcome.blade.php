@@ -3,14 +3,39 @@
         @if (Route::has('login'))
         <div class="">
             @auth
-                <a href="{{url('/dashboard')}}" class="" underline>dashboard</a>
+                @extends('layouts/blankLayout')
+
+                @section('title', 'Under Maintenance - Pages')
+
+                @section('page-style')
+                <!-- Page -->
+                <link rel="stylesheet" href="{{asset('assets/vendor/css/pages/page-misc.css')}}">
+                @endsection
+
+                @section('content')
+                <!--Under Maintenance -->
+                <div class="container-xxl container-p-y">
+                <div class="misc-wrapper">
+                    <h2 class="mb-2 mx-2">Welcome " {{ Auth::user()->name }} "</h2>
+                    <p class="mb-4 mx-2">
+                    Click here to continue browsing
+                    </p>
+                    <a href="{{url('/dashboard')}}" class="btn btn-primary">Continue Browsing</a>
+                    <div class="mt-4">
+                    <img src="{{asset('assets/img/illustrations/girl-doing-yoga-light.png')}}" alt="girl-doing-yoga-light" width="500" class="img-fluid">
+                    </div>
+                </div>
+                </div>
+                <!-- /Under Maintenance -->
+                @endsection
+
             @else
             <x-guest-layout>
-    <x-auth-card>
-    <x-slot name="logo">
-            <a href="/">
-            @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff'])            </a>
-        </x-slot>
+                <x-auth-card>
+                <x-slot name="logo">
+                        <a href="/">
+                        @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff'])            </a>
+                    </x-slot>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />

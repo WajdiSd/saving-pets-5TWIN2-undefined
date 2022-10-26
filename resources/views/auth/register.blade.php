@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff'])            </a>
             </a>
         </x-slot>
 
