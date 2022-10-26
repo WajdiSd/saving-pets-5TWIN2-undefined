@@ -41,7 +41,14 @@
       <tbody class="table-border-bottom-0">
         @foreach($listeSterilizations as $sterilization)
         <tr>
-          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$sterilization->pet->name}}</strong></td>
+          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+              @if (empty($sterilization->pet))
+              _
+              @else
+              {{$sterilization->pet->name}}
+              @endif
+            </strong>
+          </td>
           <td>
             @if ($sterilization->veterinarian != null)
             {{$sterilization->veterinarian->name}}
