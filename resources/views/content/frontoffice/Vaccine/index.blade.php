@@ -3,7 +3,9 @@
 
 @section('content')
 
-
+<a href="/frontoffice"> 
+          <button type="button" class="btn btn-warning" style="float: right;">Home Page</button>
+        </a> 
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Wiggler / HomePage </span> / Vaccine</h4>
 
 
