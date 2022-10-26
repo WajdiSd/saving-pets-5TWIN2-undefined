@@ -17,6 +17,9 @@ return new class extends Migration
             Schema::defaultStringLength(191) ;
             $table->id();
             $table->string('name');
+            $table->string('username')->default('username');
+            $table->string('phone')->default('phone');
+            $table->enum('role', ['user','admin']);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

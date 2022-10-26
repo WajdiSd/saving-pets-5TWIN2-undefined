@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -41,12 +42,11 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            'role' => 'required'
         ]);
         $input = $request ->all();
         $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
-        $user-assignRole($request->$input('roles'));
         return redirect()->route('users.index')
             ->with('succes','User Create successfully');
     }
