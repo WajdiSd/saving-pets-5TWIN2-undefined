@@ -20,6 +20,14 @@
         <tr>
           <td>{{ $typeReward->type }}</td>
           <td>{{ $typeReward->description }}</td>
+          <td>
+            <a href="{{ route('typerewards.edit',$typeReward->id) }}" class="btn btn-primary">Edit</a>
+            <form action="{{ route('typerewards.destroy',$typeReward->id) }}" method="POST" class="d-inline">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
           @endforeach
 
       </tbody>

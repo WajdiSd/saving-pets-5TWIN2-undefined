@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string("race");
             $table->integer("age");
             $table->date("captureDate");
-            $table->unsignedBigInteger('sterilization_id')->nullable();
-            $table->foreign('sterilization_id')->references('id')->on('sterilizations');
 
             $table->timestamps();
         });

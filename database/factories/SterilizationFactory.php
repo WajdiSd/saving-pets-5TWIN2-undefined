@@ -21,7 +21,7 @@ class SterilizationFactory extends Factory
         return [
             'fee' => $this->faker->randomNumber(3),
             'remarks' => $this->faker->text(50),
-            'pet_id' => 1,
+            'pet_id' => Pet::factory()->create()->id,
             'date' => now(),
             'veto_id' => Veterinarian::inRandomOrder()->first()->id,
         ];
