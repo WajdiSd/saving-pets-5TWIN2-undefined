@@ -47,10 +47,12 @@ $navbarHideToggle = false;
   </div>
   <div class="col">
     <div class="card h-100">
-      <img class="card-img-top" src="{{asset('assets/img/elements/4.jpg')}}" alt="Card image cap" />
+      <img class="card-img-top" src="{{asset('assets/img/vaccination/vaccines.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      <a href="frontoffice/vaccine"> 
+        <h5 class="card-title"><button type="button" class="btn btn-secondary">Vaccines</button></h5>
+      </a>
+        <p class="card-text">See all the vaccines available</p>
       </div>
     </div>
   </div>

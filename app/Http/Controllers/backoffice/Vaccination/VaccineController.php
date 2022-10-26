@@ -13,6 +13,12 @@ class VaccineController extends Controller
         $listevaccine = Vaccine::all();
         return view('content.backoffice.Vaccine.index', compact("listevaccine"));
     }
+
+    public function front()
+    {
+        $listevaccine = Vaccine::all();
+        return view('content.frontoffice.Vaccine.index', compact("listevaccine"));
+    }
     //Get all :
     // affiche : gère l affichage de la page de listing
     public function affiche()

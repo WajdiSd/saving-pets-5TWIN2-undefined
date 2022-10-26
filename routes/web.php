@@ -65,7 +65,7 @@ Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\
 
 //Sterilization
 Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
-
+Route::get('/frontoffice/vaccine', [\App\Http\Controllers\backoffice\Vaccination\VaccineController::class, 'front'])->name('frontofficevaccine');
 
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
