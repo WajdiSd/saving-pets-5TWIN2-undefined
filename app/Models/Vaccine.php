@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Vaccine extends Model
 {
     use HasFactory;
+  protected $fillable = [
+    'name',
+    'validity',
+    'quantity',
+    'type_vaccine_id'
+  ];
     public function typeVaccine()
     {
-        return $this->hasOne(TypeVaccine::class);
+        return $this->belongsTo(TypeVaccine::class,"type_vaccine_id");
     }
 
     public function pets()

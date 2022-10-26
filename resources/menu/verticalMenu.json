@@ -82,7 +82,7 @@
       ]
     },
     {
-      "name": "Locaux",
+      "name": "Locals",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
       "slug": "pages-account-settings",
       "submenu": [
@@ -111,7 +111,7 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/typevaccines",
           "name": "List Type Vaccines",
           "slug": "pages-account-settings-account"
         }
@@ -123,7 +123,7 @@
       "slug": "pages-account-settings",
       "submenu": [
         {
-          "url": "/backoffice/table",
+          "url": "/backoffice/vaccines",
           "name": "List Vaccines",
           "slug": "pages-account-settings-account"
         }

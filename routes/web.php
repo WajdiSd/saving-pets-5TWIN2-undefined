@@ -19,13 +19,21 @@ $controller_path = 'App\Http\Controllers';
 //Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 
 // backoffice routes
+Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class , 'index'] )->name('backoffice-table');
+Route::resource('/backoffice/association',\App\Http\Controllers\backoffice\Association\AssociationController::class);
+Route::resource('/backoffice/event',\App\Http\Controllers\backoffice\Association\EventController::class);
+Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class );
+Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class );
+//Vaccination
+Route::resource('/backoffice/vaccines',\App\Http\Controllers\backoffice\Vaccination\VaccineController::class);
+Route::resource('/backoffice/typevaccines',\App\Http\Controllers\backoffice\Vaccination\TypeVaccineController::class);
+
 Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class, 'index'])->name('backoffice-table');
 Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Association\AssociationController::class);
 Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
 Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
 Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
 Route::resource('/backoffice/enclos', \App\Http\Controllers\backoffice\Local\EnclosController::class);
-Route::resource('/backoffice/locals', \App\Http\Controllers\backoffice\Local\LocalController::class);
 
 //Sterilization
 Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
@@ -63,7 +71,7 @@ Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\
 Route::get('/frontoffice/reward', [\App\Http\Controllers\frontoffice\Reward\FrontRewardController::class, 'index'])->name('frontofficerewards');
 //Sterilization
 Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
-
+Route::get('/frontoffice/vaccine', [\App\Http\Controllers\backoffice\Vaccination\VaccineController::class, 'front'])->name('frontofficevaccine');
 
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');

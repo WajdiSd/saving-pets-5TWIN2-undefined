@@ -19,9 +19,8 @@
             <p class="card-text">
             {{$event->description}}
             </p>
-            <p class="card-text"><small class="text-muted">{{$event->dateDeb}}</small></p>
-            <p class="card-text"><small class="text-muted">{{$event->dateFin}}</small></p>
-          </div>
+            <span class="badge bg-label-success me-1">{{$event->dateDeb}}</span>
+            <span class="badge bg-label-danger me-1">{{$event->dateFin}}</span>          </div>
         </div>
       </div>
     </div>
