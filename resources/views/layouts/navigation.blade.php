@@ -35,9 +35,8 @@
                     </x-nav-link>
                 </div>
                 <!-- Vaccines Link -->
-                <!-- Vaccines route to update!!! -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('frontofficerewards')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('frontofficevaccine')" :active="request()->routeIs('dashboard')">
                         Vaccines
                     </x-nav-link>
                 </div>

@@ -48,7 +48,7 @@ $navbarHideToggle = false;
       <img class="card-img-top" src="{{asset('assets/img/vaccination/vaccines.jpg')}}" alt="Card image cap" />
       <div class="card-body">
       <a href="frontoffice/vaccine"> 
-        <h5 class="card-title"><button type="button" class="btn btn-secondary">Vaccines</button></h5>
+        <h5 class="card-title"><button type="button" class="btn btn-outline-secondary">Vaccines</button></h5>
       </a>
         <p class="card-text">See all the vaccines available</p>
       </div>
@@ -56,7 +56,7 @@ $navbarHideToggle = false;
   </div>
   <div class="col">
     <div class="card h-100">
-      <img class="card-img-top" src="{{asset('assets/img/elements/18.jpg')}}" alt="Card image cap" />
+      <img class="card-img-top" src="{{asset('assets/img/wiggler/Reward.webp')}}" alt="Card image cap" />
       <div class="card-body">
         <a href="frontoffice/reward">
           <h5 class="card-title"><button type="button" class="btn btn-outline-warning">Rewards</button></h5>
