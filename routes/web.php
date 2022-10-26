@@ -34,6 +34,7 @@ Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Associatio
 Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
 Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
 Route::resource('/backoffice/enclos', \App\Http\Controllers\backoffice\Local\EnclosController::class);
+Route::resource('/backoffice/locals', \App\Http\Controllers\backoffice\Local\LocalController::class);
 
 //Sterilization
 Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
