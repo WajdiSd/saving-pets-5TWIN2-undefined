@@ -2,15 +2,15 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-            @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff'])            </a>
+                @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff']) </a>
             </a>
         </x-slot>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
-        <a href="{{url('/register')}}" style="color: green" >
-                <button type="button" class="btn btn-success" style="float: right;">Create an account</button>
-                </a>
+        <a href="{{url('/register')}}" style="color: green">
+            <button type="button" class="btn btn-success" style="float: right;">Create an account</button>
+        </a>
         </br>
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -28,10 +28,7 @@
             <div class="mt-4">
                 <x-input-label for="password" :value="__('Password')" />
 
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
@@ -46,9 +43,9 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    {{ __('Forgot your password?') }}
+                </a>
                 @endif
 
                 <x-primary-button class="ml-3">

@@ -58,18 +58,6 @@
       ]
     },
     {
-      "name": "Cages",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
-      "submenu": [
-        {
-          "url": "/backoffice/table",
-          "name": "List Cages",
-          "slug": "pages-account-settings-account"
-        }
-      ]
-    },
-    {
       "name": "Veterinarian",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
       "slug": "veterinarian",
