@@ -23,6 +23,7 @@
       <tbody class="table-border-bottom-0">
         @foreach ($rewards as $reward)
         <tr>
+          <td>{{ $reward->id }}</td>
           <td>{{ $reward->name }}</td>
           <td>{{ $reward->quantity }}</td>
           <td>
