@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Pet extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'type',
+        'race',
+        'age',
+        'captureDate'
+
+    ];
+
     public function sterilization()
     {
         return $this->hasOne(Sterilization::class);
@@ -19,6 +29,6 @@ class Pet extends Model
 
     public function vaccines()
     {
-        return $this->belongsToMany(Vaccine::class);
+        return $this->belongsToMany(Vaccine::class ,'pet_vaccines' );
     }
 }

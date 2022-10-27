@@ -117,6 +117,17 @@
         }
       ]
     },
+    {  "name": "Pets",
+    "icon": "menu-icon tf-icons bx bx bx-dock-top",
+    "slug": "pages-account-settings",
+    "submenu": [
+      {
+        "url": "/backoffice/pets",
+        "name": "List Pets",
+        "slug": "pages-account-settings-account"
+      }
+    ]
+  },
     {
       "name": "Reward Types",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
