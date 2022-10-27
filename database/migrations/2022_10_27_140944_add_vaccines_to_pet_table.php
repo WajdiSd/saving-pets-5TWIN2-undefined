@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use lluminate\Database\Schema\ForeignKeyDefinition;
 return new class extends Migration
 {
     /**
@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vaccine_pet', function (Blueprint $table) {
+        
+        Schema::create('pet_vaccines', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pet_id');
-            $table->unsignedBigInteger('vaccine_id');
-            $table->foreign('vaccine_id')
-                ->references('id')->on('vaccines');
-            $table->foreign('pet_id')
-                ->references('id')->on('pets');
+            $table->foreignId('pet_id')->constrained('pets');
+            $table->foreignId('vaccine_id')->constrained('vaccines');
             $table->timestamps();
         });
     }
@@ -32,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vaccine_pet');
+        Schema::table('PetVaccine', function (Blueprint $table) {
+            //
+        });
     }
 };
