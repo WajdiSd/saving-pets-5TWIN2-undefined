@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer("quantity");
             $table->unsignedBigInteger('type_vaccine_id');
             $table->foreign('type_vaccine_id')
-                ->references('id')->on('type_vaccines');
+                ->references('id')->on('type_vaccines')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('quantity');
             $table->timestamps();
-            $table->foreign('type_rewards_id')->references('id')->on('type_rewards');
+            $table->foreign('type_rewards_id')->references('id')->on('type_rewards')->onDelete('cascade');
 
         });
     }

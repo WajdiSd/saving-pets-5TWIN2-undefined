@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Reward;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -32,6 +34,7 @@ class DatabaseSeeder extends Seeder
             CreateAdminUserSeeder::class,
             PetSeeder::class,
             TypeRewardsSeeder::class,
+            RewardSeeder::class,
 
         ]);
     }
