@@ -7,7 +7,7 @@
   <span class="text-muted fw-light">Veterinarian /</span> List Veterinarian
 
   <a href="{{ route('veterinarian.create') }}">
-    <button type="button" class="btn btn-success" style="float: right;">Add Veterinarian</button>
+    <button type="button" class="btn btn-outline-success" style="float: right;">Add Veterinarian</button>
   </a>
 </h4>
 
@@ -57,7 +57,7 @@
                 <form action="{{ route('veterinarian.destroy',$veto->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
-                  <button type="submit" class="btn btn-danger"><i class="bx bx-trash-alt me-1"></i> Delete</button>
+                  <button type="submit" class="btn btn-outline-danger"><i class="bx bx-trash-alt me-1"></i> Delete</button>
                 </form>
               </div>
             </div>

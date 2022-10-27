@@ -10,18 +10,6 @@
       "menuHeader": "Managements"
     },
     {
-      "name": "Users",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
-      "submenu": [
-        {
-          "url": "/backoffice/table",
-          "name": "List Users",
-          "slug": "pages-account-settings-account"
-        }
-      ]
-    },
-    {
       "name": "Associations",
       "icon": "menu-icon tf-icons bx bx bx-home-heart",
       "slug": "pages-account-settings",

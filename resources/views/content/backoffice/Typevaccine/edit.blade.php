@@ -49,7 +49,7 @@
             </div>
             <div class="row justify-content-end">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-success">Update type vaccine</button>
+                <button type="submit" class="btn btn-outline-success">Update type vaccine</button>
               </div>
             </div>
           </form>
@@ -60,7 +60,7 @@
 
   <p></p><p></p><p></p>
   <a href="{{ route('typevaccines.index') }}">
-    <button type="button" class="btn btn-secondary" style="float: left;">Type Vaccines</button>
+    <button type="button" class="btn btn-outline-secondary" style="float: left;">Type Vaccines</button>
   </a>
 
 @endsection

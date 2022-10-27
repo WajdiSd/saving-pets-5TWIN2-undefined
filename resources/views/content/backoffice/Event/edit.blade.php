@@ -19,7 +19,7 @@
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-rename"></i></span>
-                <input type="text" class="form-control" value="{{ old('name', $event->name) }}" name="name" id="name"/> 
+                <input type="text" class="form-control" value="{{ old('name', $event->name) }}" name="name" id="name"/>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Update</button>
+              <button type="submit" class="btn btn-outline-success">Update</button>
             </div>
           </div>
         </form>
@@ -106,7 +106,7 @@
 </div>
 
 <p></p>
-<a href="{{ route('event.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go to EVENTS</button>
+<a href="{{ route('event.index') }}">
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go to EVENTS</button>
 </a>
 @endsection

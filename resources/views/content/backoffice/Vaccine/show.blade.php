@@ -22,7 +22,7 @@
   <span class="text-muted fw-light">Vaccine /</span> Show
 
       <a href="{{ route('vaccines.edit',$vaccine->id) }}">
-          <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
+          <button type="button" class="btn btn-outline-success" style="float: right;">EDIT </button>
       </a>
 
 </h4>
@@ -50,10 +50,10 @@
 </div>
 <p></p><p></p><p></p>
 <a href="{{ route('vaccines.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: right;"> Go to Vaccines</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: right;"> Go to Vaccines</button>
 </a>
 <a href="{{ route('typevaccines.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Go to Type Vaccines</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go to Type Vaccines</button>
 </a>
 
 @endsection

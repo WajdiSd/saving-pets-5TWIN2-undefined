@@ -18,7 +18,7 @@
         <label for="description" class="form-label">Description</label>
         <input type="text" class="form-control" id="description" name="description" value="{{ $typeReward->description }}">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
     </form>
   </div>
 </div>

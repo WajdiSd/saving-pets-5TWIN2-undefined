@@ -20,11 +20,11 @@
 
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Event /</span> Show
-       
-      <a href="{{ route('event.edit',$event->id) }}"> 
-          <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
+
+      <a href="{{ route('event.edit',$event->id) }}">
+          <button type="button" class="btn btn-outline-success" style="float: right;">EDIT </button>
       </a>
-                
+
 </h4>
 
 <div class="row">
@@ -37,20 +37,20 @@
             <h5 class="card-title text-primary">{{$event->name}}</h5>
             <p class="mb-4"><span class="fw-bold">Description : </span>{{$event->description}}</p>
             <p class="mb-4">
-              
-          @if (empty($event->association_id))       
+
+          @if (empty($event->association_id))
               <a href="{{ route('event.edit',$event->id) }}">
               <font color="red"> <i class="bx bx-no-entry me-1"></i>
                 None,Add Association </font>
                 </a>
-              @else   
+              @else
                 <a href="{{ route('association.show',$event->association_id) }}"><i class="bx bx-link-external me-1"></i>
                     {{ \App\Models\Association::where(['id' => $event->association_id])->pluck('name')->first() }}
                 </a>
           @endif
             </p>
             <span class="badge bg-label-success me-1">Start date : {{$event->dateDeb}}</span>
-            
+
             <span class="badge bg-label-danger me-1">End date : {{$event->dateFin}}</span>
           </div>
         </div>
@@ -60,12 +60,12 @@
           </div>
         </div>
     </div>
-</div> 
+</div>
 <p></p>
-<a href="{{ route('association.index') }}"> 
-  <button type="button" class="btn btn-success" style="float: right;"> Go to ASSOCIATIONS</button>
+<a href="{{ route('association.index') }}">
+  <button type="button" class="btn btn-outline-success" style="float: right;"> Go to ASSOCIATIONS</button>
 </a>
-<a href="{{ route('event.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go to EVENTS</button>
+<a href="{{ route('event.index') }}">
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go to EVENTS</button>
 </a>
 @endsection

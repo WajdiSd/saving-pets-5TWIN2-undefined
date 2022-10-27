@@ -8,7 +8,7 @@
 <div class="card">
   <h5 class="card-header">Locals</h5>
   <a href="{{ route('locals.create') }}">
-  <button type="button" class="btn btn-success" style="float: right;">Add local</button>
+  <button type="button" class="btn btn-outline-success" style="float: right;">Add local</button>
 </a>
   <div class="table-responsive text-nowrap">
     <table class="table">
@@ -29,11 +29,11 @@
           <td>{{ $local->address }}</td>
           <td>{{ $local->status }}</td>
           <td>
-            <a href="{{ route('locals.edit',$local->id) }}" class="btn btn-primary">Edit</a>
+            <a href="{{ route('locals.edit',$local->id) }}" class="btn btn-outline-primary">Edit</a>
             <form action="{{ route('locals.destroy',$local->id) }}" method="POST" class="d-inline">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger">Delete</button>
+              <button type="submit" class="btn btn-outline-danger">Delete</button>
             </form>
           </td>
         </tr>

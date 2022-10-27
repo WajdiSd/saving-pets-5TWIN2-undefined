@@ -8,7 +8,7 @@
 <div class="card">
   <h5 class="card-header">Enclos</h5>
   <a href="{{ route('enclos.create') }}">
-    <button type="button" class="btn btn-success" style="float: right;">Add enclos</button>
+    <button type="button" class="btn btn-outline-success" style="float: right;">Add enclos</button>
   </a>
   <div class="table-responsive text-nowrap">
     <table class="table">
@@ -29,11 +29,11 @@
           <td>{{ $enclos->capacity }}</td>
           <td>{{ $enclos->local->name }}</td>
           <td>
-            <a href="{{ route('enclos.edit',$enclos->id) }}" class="btn btn-primary">Edit</a>
+            <a href="{{ route('enclos.edit',$enclos->id) }}" class="btn btn-outline-primary">Edit</a>
             <form action="{{ route('enclos.destroy',$enclos->id) }}" method="POST" class="d-inline">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger">Delete</button>
+              <button type="submit" class="btn btn-outline-danger">Delete</button>
             </form>
           </td>
         </tr>

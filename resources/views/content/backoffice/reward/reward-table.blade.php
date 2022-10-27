@@ -8,7 +8,7 @@
 <div class="card">
   <h5 class="card-header">Rewards</h5>
   <a href="{{ route('rewards.create') }}">
-  <button type="button" class="btn btn-success" style="float: right;">Add reward</button>
+  <button type="button" class="btn btn-outline-success" style="float: right;">Add reward</button>
 </a>
   <div class="table-responsive text-nowrap">
     <table class="table">
@@ -27,11 +27,11 @@
           <td>{{ $reward->name }}</td>
           <td>{{ $reward->quantity }}</td>
           <td>
-            <a href="{{ route('rewards.edit',$reward->id) }}" class="btn btn-primary">Edit</a>
+            <a href="{{ route('rewards.edit',$reward->id) }}" class="btn btn-outline-primary">Edit</a>
             <form action="{{ route('rewards.destroy',$reward->id) }}" method="POST" class="d-inline">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger">Delete</button>
+              <button type="submit" class="btn btn-outline-danger">Delete</button>
             </form>
           </td>
         </tr>

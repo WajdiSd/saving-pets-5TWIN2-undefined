@@ -96,7 +96,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Add event</button>
+              <button type="submit" class="btn btn-outline-success">Add event</button>
             </div>
           </div>
         </form>
@@ -107,6 +107,6 @@
 
 <p></p>
 <a href="{{ route('event.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Go to EVENTS</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go to EVENTS</button>
 </a>
 @endsection

@@ -6,8 +6,8 @@
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Association /</span> List Associations
 
-  <a href="{{ route('association.create') }}"> 
-  <button type="button" class="btn btn-success" style="float: right;">Add association</button>
+  <a href="{{ route('association.create') }}">
+  <button type="button" class="btn btn-outline-success" style="float: right;">Add association</button>
 </a>
 </h4>
 
@@ -20,7 +20,7 @@
           <th>Nom</th>
           <th>Description</th>
           <th>RIB</th>
-                       
+
           <th>Action</th>
         </tr>
       </thead>

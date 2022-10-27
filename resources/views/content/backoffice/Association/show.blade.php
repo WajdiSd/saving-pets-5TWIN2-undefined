@@ -20,11 +20,11 @@
 
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Association /</span> Show
-       
-      <a href="{{ route('association.edit',$association->id) }}"> 
-          <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
+
+      <a href="{{ route('association.edit',$association->id) }}">
+          <button type="button" class="btn btn-outline-success" style="float: right;">EDIT </button>
       </a>
-                
+
 </h4>
 
 <div class="row">
@@ -50,7 +50,7 @@
   </div>
   <div class="col-lg-4 col-md-4 order-1">
     <div class="row">
-      
+
       <div class="col-12 mb-4">
         <div class="card">
           <div class="card-body">
@@ -72,17 +72,17 @@
             <p></p>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
 </div>
 <p></p><p></p><p></p>
-<a href="{{ route('event.index') }}"> 
-  <button type="button" class="btn btn-success" style="float: right;"> Go to EVENTS</button>
+<a href="{{ route('event.index') }}">
+  <button type="button" class="btn btn-outline-success" style="float: right;"> Go to EVENTS</button>
 </a>
-<a href="{{ route('association.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go to ASSOCIATIONS</button>
+<a href="{{ route('association.index') }}">
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go to ASSOCIATIONS</button>
 </a>
 
 @endsection

@@ -7,7 +7,7 @@
   <span class="text-muted fw-light">Pet /</span> List Pets
 
   <a href="{{ route('pets.create') }}">
-    <button type="button" class="btn btn-outline-success" style="float: right;">Add Pet</button>
+    <button type="button" class="btn btn-outline-outline-success" style="float: right;">Add Pet</button>
   </a>
 </h4>
 

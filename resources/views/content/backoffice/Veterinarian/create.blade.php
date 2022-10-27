@@ -87,7 +87,7 @@
 
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Add veterinarian</button>
+              <button type="submit" class="btn btn-outline-success">Add veterinarian</button>
             </div>
           </div>
         </form>
@@ -98,6 +98,6 @@
 
 <p></p>
 <a href="{{ route('veterinarian.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Back to list</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Back to list</button>
 </a>
 @endsection

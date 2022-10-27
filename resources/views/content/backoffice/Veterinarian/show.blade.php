@@ -22,7 +22,7 @@
   <span class="text-muted fw-light">Veterinarian /</span> Show
 
   <a href="{{ route('veterinarian.edit',$veterinarian->id) }}">
-    <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
+    <button type="button" class="btn btn-outline-success" style="float: right;">EDIT </button>
   </a>
 
 </h4>
@@ -54,6 +54,6 @@
     <p></p>
 
     <a href="{{ route('veterinarian.index') }}">
-      <button type="button" class="btn btn-secondary" style="float: left;">Back to list</button>
+      <button type="button" class="btn btn-outline-secondary" style="float: left;">Back to list</button>
     </a>
     @endsection

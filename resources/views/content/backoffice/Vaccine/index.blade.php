@@ -7,7 +7,7 @@
   <span class="text-muted fw-light">Vaccine /</span> List Vaccines
 
   <a href="{{ route('vaccines.create') }}">
-  <button type="button" class="btn btn-success" style="float: right;">Add vaccine</button>
+  <button type="button" class="btn btn-outline-success" style="float: right;">Add vaccine</button>
 </a>
 </h4>
 

@@ -18,7 +18,7 @@
             <div class="col-sm-10">
               <div class="input-group input-group-merge">
                 <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-rename"></i></span>
-                <input type="text" class="form-control" placeholder="Association's name" name="name" id="name"/> 
+                <input type="text" class="form-control" placeholder="Association's name" name="name" id="name"/>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Add association</button>
+              <button type="submit" class="btn btn-outline-success">Add association</button>
             </div>
           </div>
         </form>
@@ -78,8 +78,8 @@
 </div>
 
 <p></p><p></p><p></p>
-<a href="{{ route('association.index') }}"> 
-  <button type="button" class="btn btn-secondary" style="float: left;">Go to ASSOCIATIONS</button>
+<a href="{{ route('association.index') }}">
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go to ASSOCIATIONS</button>
 </a>
 
 @endsection

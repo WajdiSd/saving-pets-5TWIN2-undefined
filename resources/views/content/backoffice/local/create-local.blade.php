@@ -40,11 +40,11 @@
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
           </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
     </form>
   </div>
 </div>
 <a href="{{ route('locals.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go BACK</button>
 </a>
 @endsection

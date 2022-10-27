@@ -18,12 +18,12 @@
         <label for="quantity" class="form-label">Quantity</label>
         <input type="text" class="form-control" id="quantity" name="quantity" value="{{ $reward->quantity }}">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
     </form>
   </div>
 </div>
 <a href="{{ route('rewards.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Go BACK</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Go BACK</button>
 </a>
 
 @endsection
