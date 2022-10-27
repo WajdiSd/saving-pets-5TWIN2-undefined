@@ -1,13 +1,12 @@
 @extends('content/frontoffice/home')
 @section('content')
-<x-app-layout>
 
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Wiggler / HomePage </span> / Association</h4>
 
 <!-- Horizontal -->
 <h5 class="pb-1 mb-4">Associations</h5>
 <div class="row mb-5">
-@foreach($listeassociations as $association)
+  @foreach($listeassociations as $association)
   <div class="col-md-3">
     <div class="card mb-3">
       <div class="row g-0">
@@ -18,9 +17,9 @@
           <div class="card-body">
             <h5 class="card-title">{{$association->name}}</h5>
             <p class="card-text">
-            {{$association->description}}
+              {{$association->description}}
             </p>
-            <span class="badge bg-label-success me-1">{{$association->rib}}</span>          
+            <span class="badge bg-label-success me-1">{{$association->rib}}</span>
           </div>
         </div>
       </div>
@@ -29,6 +28,5 @@
   @endforeach
 </div>
 <!--/ Horizontal -->
-</x-app-layout>
 
 @endsection

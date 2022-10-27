@@ -22,7 +22,7 @@
   <span class="text-muted fw-light">Event /</span> Show
 
   <a href="{{ route('sterilization.edit',$sterilization->id) }}">
-    <button type="button" class="btn btn-success" style="float: right;">EDIT </button>
+    <button type="button" class="btn btn-outline-primary" style="float: right;">EDIT </button>
   </a>
 
 </h4>
@@ -35,7 +35,13 @@
         <div class="col-sm-7">
           <div class="card-body">
             <h5 class="card-title text-primary">{{ date('d-m-Y H:m', strtotime($sterilization->date)) }}</h5>
-            <p class="mb-4"><span class="fw-bold">Pet : </span>{{$sterilization->pet->name}}</p>
+            <p class="mb-4"><span class="fw-bold">Pet : </span>
+              @if (empty($sterilization->pet))
+              _
+              @else
+              {{$sterilization->pet->name}}
+              @endif
+            </p>
             <p class="mb-4"></p>
             <p class="mb-4"><span class="fw-bold">Veterinarian : </span>{{$sterilization->veterinarian->name}}</p>
             <p class="mb-4"></p>
@@ -56,6 +62,6 @@
     <p></p>
 
     <a href="{{ route('sterilization.index') }}">
-      <button type="button" class="btn btn-secondary" style="float: left;">Back to list</button>
+      <button type="button" class="btn btn-outline-secondary" style="float: left;">Back to list</button>
     </a>
     @endsection

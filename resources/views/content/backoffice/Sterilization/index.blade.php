@@ -5,11 +5,46 @@
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Sterilizations /</span> List Sterilizations
-
-  <a href="{{ route('sterilization.create') }}">
-    <button type="button" class="btn btn-success" style="float: right;">Add sterilization</button>
-  </a>
 </h4>
+
+<div class="row">
+  <div class="col-lg-8 mb-4 order-0">
+    <div class="card">
+      <div class="d-flex align-items-end row">
+        <div class="col-sm-7">
+          <div class="card-body">
+            <h5 class="card-title text-primary"> Welcome {{ Auth::user()->name }}</h5>
+            <p class="mb-4">Here you can <span class="fw-bold">create, update and delete</span> all <span class="fw-bold">sterilization</span> records.</p>
+
+            <a href="{{ route('sterilization.create') }}" class="btn btn-outline-primary">Add sterilization</a>
+          </div>
+        </div>
+        <div class="col-sm-5 text-center text-sm-left">
+          <div class="card-body pb-0 px-0 px-md-4">
+            <img src="{{asset('assets/img/illustrations/man-with-laptop-light.png')}}" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 order-1">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-lg-6 col-md-12 col-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title d-flex align-items-center justify-content-center">
+              <div class="avatar flex-shrink-0">
+                <img src="{{asset('assets/img/icons/unicons/chart-success.png')}}" alt="chart success" class="rounded">
+              </div>
+            </div>
+            <span class="fw-semibold d-block mb-1">{{$sterNumber}} out of {{$nonSterNumber}} pets sterialized </span>
+            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> {{round($percentageSter, 2)}}%</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="card">
   <h5 class="card-header">Sterilizations existing :</h5>
@@ -70,7 +105,7 @@
                 <form action="{{ route('sterilization.destroy',$sterilization->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
-                  <button type="submit" class="btn btn-danger"><i class="bx bx-trash-alt me-1"></i> Delete</button>
+                  <button type="submit" class="btn btn-link"><i class="bx bx-trash-alt me-1"></i> Delete</button>
                 </form>
               </div>
             </div>

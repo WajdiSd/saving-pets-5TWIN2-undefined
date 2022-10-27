@@ -12,7 +12,6 @@ $navbarHideToggle = false;
 @endsection
 
 @section('content')
-<x-app-layout>
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Wiggler /</span> HomePage</h4>
 <!-- Grid Card -->
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
@@ -47,9 +46,9 @@ $navbarHideToggle = false;
     <div class="card h-100">
       <img class="card-img-top" src="{{asset('assets/img/vaccination/vaccines.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-      <a href="frontoffice/vaccine"> 
-        <h5 class="card-title"><button type="button" class="btn btn-outline-secondary">Vaccines</button></h5>
-      </a>
+        <a href="frontoffice/vaccine">
+          <h5 class="card-title"><button type="button" class="btn btn-outline-secondary">Vaccines</button></h5>
+        </a>
         <p class="card-text">See all the vaccines available</p>
       </div>
     </div>
@@ -84,6 +83,5 @@ $navbarHideToggle = false;
     </div>
   </div>
 </div>
-</x-app-layout>
 
 @endsection
