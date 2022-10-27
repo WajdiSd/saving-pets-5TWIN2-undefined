@@ -12,7 +12,7 @@
 </h4>
 
 <div class="card">
-  <h5 class="card-header">Pets existing :</h5>
+  <h5 class="card-header">Pets existing : ( {{sizeof($listepets)}} )</h5>
   <div class="table-responsive text-nowrap">
     <table class="table table-hover">
       <thead>

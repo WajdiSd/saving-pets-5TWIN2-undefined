@@ -66,22 +66,28 @@ $navbarHideToggle = false;
   </div>
   <div class="col">
     <div class="card h-100">
-      <img class="card-img-top" src="{{asset('assets/img/elements/19.jpg')}}" alt="Card image cap" />
+      <img class="card-img-top" src="{{asset('assets/img/local/local.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="frontoffice/local">
+          <h5 class="card-title"><button type="button" class="btn btn-outline-warning">Locals</button></h5>
+        </a>
+        <p class="card-text">The list of our current locals in all countries .</p>
       </div>
     </div>
   </div>
+
+
   <div class="col">
     <div class="card h-100">
-      <img class="card-img-top" src="{{asset('assets/img/elements/20.jpg')}}" alt="Card image cap" />
+      <img class="card-img-top" src="{{asset('assets/img/wiggler/veterinarian.jpg')}}" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="frontoffice/veterinarian">
+          <h5 class="card-title"><button type="button" class="btn btn-outline-warning">Veterinarian</button></h5>
+        </a>
+        <p class="card-text">A list of our contracted veterinarian from all around the world .</p>
       </div>
     </div>
-  </div>
+
 </div>
 
 @endsection
