@@ -1,6 +1,5 @@
 @extends('content/frontoffice/home')
 @section('content')
-<x-app-layout>
 
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Wiggler / HomePage </span> / Reward</h4>
 <h5 class="pb-1 mb-4">Rewards</h5>
@@ -18,5 +17,4 @@
   </div>
   @endforeach
 </div>
-</x-app-layout>
 @endsection

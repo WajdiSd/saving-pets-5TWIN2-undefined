@@ -13,7 +13,9 @@ class Event extends Model
         'description',
         'dateDeb',
         'dateFin',
+        'association_id'
         ];
+        
 
     public function association()
         {

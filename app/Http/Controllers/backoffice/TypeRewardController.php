@@ -73,8 +73,9 @@ class TypeRewardController extends Controller
    * @param  \App\Models\TypeReward  $typeReward
    * @return \Illuminate\Http\Response
    */
-  public function edit(TypeReward $typeReward)
+  public function edit($id)
   {
+    $typeReward =  \App\Models\TypeReward::find($id);
     return view('content.backoffice.reward.edit-type-reward', compact('typeReward'));
   }
 
@@ -89,6 +90,6 @@ class TypeRewardController extends Controller
     $tr->description = $request->input('description');
     $tr->save();
 
-    return redirect('/backoffice/typerewards')->with('success', 'Type Reward Updated');
+    return redirect('backoffice/typerewards')->with('success', 'Type Reward Updated');
   }
 }

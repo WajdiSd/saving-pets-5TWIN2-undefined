@@ -60,14 +60,14 @@ class EventController extends Controller
 
         $event1 = \App\Models\Event::create($request->all());
         // $product->categorie_id  = $request->categorie_id;
-        $event2 = [
+        /*$event2 = [
             'name' => $request->name, 'description' => $request->description,
             'dateDeb' => $request->dateDeb,
             'dateFin' => $request->dateFin,
             'association_id' => $request->association_id,
         ];
         \App\Models\Event::whereId($event1->id)->update($event2);
-
+        */
         return redirect()->route('event.index');
     }
 

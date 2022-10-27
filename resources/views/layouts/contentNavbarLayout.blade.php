@@ -31,7 +31,7 @@ $container = ($container ?? 'container-xxl');
     <!-- Layout page -->
     <div class="layout-page">
       <!-- BEGIN: Navbar-->
-     
+
       <!-- END: Navbar-->
 
 
@@ -45,7 +45,9 @@ $container = ($container ?? 'container-xxl');
           <div class="{{$container}} flex-grow-1 container-p-y">
             @endif
             @include('layouts.flash-message')
-            @yield('content')
+            <x-app-layout>
+              @yield('content')
+            </x-app-layout>
 
             <!-- pricingModal -->
             @if ($pricingModal)

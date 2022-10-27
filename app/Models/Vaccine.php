@@ -21,7 +21,7 @@ class Vaccine extends Model
 
     public function pets()
     {
-        return $this->belongsToMany(Pet::class);
+        return $this->belongsToMany(Pet::class,'pet_vaccines');
     }
 
 

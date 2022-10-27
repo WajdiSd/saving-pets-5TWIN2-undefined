@@ -72,6 +72,10 @@ Route::group(['middleware' => 'auth'], function () {
                 ]
             ]
         );
+
+        //pet
+        Route::resource('/backoffice/pets', \App\Http\Controllers\backoffice\Pet\PetsController::class);
+
     });
 
     ###

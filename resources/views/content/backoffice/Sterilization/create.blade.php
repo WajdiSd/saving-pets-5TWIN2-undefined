@@ -113,7 +113,7 @@
 
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Add sterilization</button>
+              <button type="submit" class="btn btn-outline-primary">Add sterilization</button>
             </div>
           </div>
         </form>
@@ -124,6 +124,6 @@
 
 <p></p>
 <a href="{{ route('sterilization.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Back to list</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Back to list</button>
 </a>
 @endsection

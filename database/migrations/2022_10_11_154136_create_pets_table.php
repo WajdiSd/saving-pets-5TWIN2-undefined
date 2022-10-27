@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("type");
             $table->string("race");
             $table->integer("age");
-            $table->date("captureDate");
+            $table->date("captureDate")->default(now());
 
             $table->timestamps();
         });
