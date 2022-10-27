@@ -57,7 +57,7 @@ class PetsController extends Controller
             ];
             PetVaccines::create($res);
         }
-        
+
         return redirect()->route('pets.index');
     }
 
@@ -66,7 +66,7 @@ class PetsController extends Controller
     public function destroy($id)
     {
         $pet = Pet::find($id) ;
-        $Petvaccine = PetVaccines::where('pet_id',$id)->get(); 
+        $Petvaccine = PetVaccines::where('pet_id',$id)->get();
         foreach ($Petvaccine as $vaccine){
             $vaccine->delete();
         }
@@ -90,14 +90,5 @@ class PetsController extends Controller
         return  redirect()->route('pets.index') ;
 
     }
-    //Show selected :
-    //show : gère l affichage d un element selectionne
-    public function show($id)
-    {
-        $vaccine =  Vaccine::find($id);
 
-        return view('content.backoffice.Vaccine.show', compact('vaccine'));
-
-
-    }
 }

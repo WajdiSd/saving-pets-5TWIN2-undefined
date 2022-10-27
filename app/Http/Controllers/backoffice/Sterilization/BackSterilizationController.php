@@ -16,7 +16,11 @@ class BackSterilizationController extends Controller
         $pettotal = count($listePet);
         $nonSterNumber = count($listeNonSterPet);
         $sterNumber = $pettotal - $nonSterNumber;
-        $percentageSter = $sterNumber * 100 / $pettotal;
+        if($pettotal == 0){
+            $percentageSter = 0;
+        } else {
+            $percentageSter = round(($sterNumber / $pettotal) * 100);
+        }
         return view('content.backoffice.Sterilization.index', compact('listeSterilizations', 'nonSterNumber', 'sterNumber', 'percentageSter'));
     }
 
