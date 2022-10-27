@@ -18,51 +18,76 @@ $controller_path = 'App\Http\Controllers';
 // Main Page Route
 //Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 
+$routeMiddleware = [
+    // ...
+    'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+];
+
 // backoffice routes
-Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class, 'index'])->name('backoffice-table');
-Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Association\AssociationController::class);
-Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
-Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
-Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
-Route::resource('/backoffice/enclos', \App\Http\Controllers\backoffice\Local\EnclosController::class);
-Route::resource('/backoffice/locals', \App\Http\Controllers\backoffice\Local\LocalController::class);
+Route::group(['middleware' => 'auth'], function () {
 
-//Sterilization
-Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
-    'names' => [
-        'index' => 'sterilization.index',
-        'create' => 'sterilization.create',
-        'edit' => 'sterilization.edit',
-        'show' => 'sterilization.show',
-        // etc...
-    ]
-]);
-//Veterinarian
-Route::resource(
-    '/backoffice/veterinarian',
-    \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class,
-    [
-        'names' => [
-            'index' => 'veterinarian.index',
-            'create' => 'veterinarian.create',
-            'edit' => 'veterinarian.edit',
-            'show' => 'veterinarian.show',
-            // etc...
-        ]
-    ]
-);
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->middleware(['auth', 'verified'])->name('dashboard');
 
-/* ####################################################################################### */
+        Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class, 'index'])->name('backoffice-table');
+        Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Association\AssociationController::class);
+        Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
+        Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
+        Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
+        //Vaccination
+        Route::resource('/backoffice/vaccines', \App\Http\Controllers\backoffice\Vaccination\VaccineController::class);
+        Route::resource('/backoffice/typevaccines', \App\Http\Controllers\backoffice\Vaccination\TypeVaccineController::class);
+
+        Route::get('/backoffice/table', [\App\Http\Controllers\backoffice\AllTables::class, 'index'])->name('backoffice-table');
+        Route::resource('/backoffice/association', \App\Http\Controllers\backoffice\Association\AssociationController::class);
+        Route::resource('/backoffice/event', \App\Http\Controllers\backoffice\Association\EventController::class);
+        Route::resource('/backoffice/rewards', \App\Http\Controllers\backoffice\RewardController::class);
+        Route::resource('/backoffice/typerewards', \App\Http\Controllers\backoffice\TypeRewardController::class);
+        Route::resource('/backoffice/enclos', \App\Http\Controllers\backoffice\Local\EnclosController::class);
+        Route::resource('/backoffice/locals', \App\Http\Controllers\backoffice\Local\LocalController::class);
+
+        //Sterilization
+        Route::resource('/backoffice/sterilization', \App\Http\Controllers\backoffice\Sterilization\BackSterilizationController::class, [
+            'names' => [
+                'index' => 'sterilization.index',
+                'create' => 'sterilization.create',
+                'edit' => 'sterilization.edit',
+                'show' => 'sterilization.show',
+                // etc...
+            ]
+        ]);
+        //Veterinarian
+        Route::resource(
+            '/backoffice/veterinarian',
+            \App\Http\Controllers\backoffice\Sterilization\BackVetoController::class,
+            [
+                'names' => [
+                    'index' => 'veterinarian.index',
+                    'create' => 'veterinarian.create',
+                    'edit' => 'veterinarian.edit',
+                    'show' => 'veterinarian.show',
+                    // etc...
+                ]
+            ]
+        );
+    });
+
+    ###
+    /* #################################################################################### */
+    ###
+    // frontoffice routes
+    Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
+    Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
+    Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
+    Route::get('/frontoffice/reward', [\App\Http\Controllers\frontoffice\Reward\FrontRewardController::class, 'index'])->name('frontofficerewards');
+    //Sterilization
+    Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
+    Route::get('/frontoffice/vaccine', [\App\Http\Controllers\backoffice\Vaccination\VaccineController::class, 'front'])->name('frontofficevaccine');
+});
 
 
-
-// frontoffice routes
-Route::get('/frontoffice', [\App\Http\Controllers\frontoffice\FrontOffice::class, 'index'])->name('frontoffice');
-Route::get('/frontoffice/association', [\App\Http\Controllers\frontoffice\Association\FrontAssociationController::class, 'index'])->name('frontofficeassociation');
-Route::get('/frontoffice/event', [\App\Http\Controllers\frontoffice\Association\FrontEventController::class, 'index'])->name('frontofficeevent');
-Route::get('/frontoffice/reward', [\App\Http\Controllers\frontoffice\Reward\FrontRewardController::class, 'index'])->name('frontofficerewards');
-//Sterilization
-Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
 
 
 // layout
@@ -83,18 +108,11 @@ Route::get('/pages/misc-under-maintenance', $controller_path . '\pages\MiscUnder
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
 
-// authentication
-Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');
-Route::get('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@index')->name('auth-register-basic');
-Route::get('/auth/forgot-password-basic', $controller_path . '\authentications\ForgotPasswordBasic@index')->name('auth-reset-password-basic');
+require __DIR__ . '/auth.php';
 
 // cards
 Route::get('/cards/basic', $controller_path . '\cards\CardBasic@index')->name('cards-basic');

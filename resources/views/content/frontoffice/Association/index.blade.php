@@ -1,9 +1,7 @@
 @extends('content/frontoffice/home')
 @section('content')
+<x-app-layout>
 
-<a href="/frontoffice"> 
-          <button type="button" class="btn btn-warning" style="float: right;">Home Page</button>
-        </a> 
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Wiggler / HomePage </span> / Association</h4>
 
 <!-- Horizontal -->
@@ -31,4 +29,6 @@
   @endforeach
 </div>
 <!--/ Horizontal -->
+</x-app-layout>
+
 @endsection

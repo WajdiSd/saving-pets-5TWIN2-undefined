@@ -1,21 +1,46 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 mb-5">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div class="flex justify-between h-16 ">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                    <a href=" @if (str_contains(Route::currentRouteName(), 'frontoffice')) {{ route('frontoffice') }} @else {{ route('dashboard') }} @endif ">
+                        @include('_partials.wiggler',["width"=>150,"height"=>222,"withbg"=>'#696cff']) </a>
                     </a>
                 </div>
-
-                <!-- Navigation Links -->
+                @if (str_contains(Route::currentRouteName(), 'frontoffice'))
+                <!-- Association Link -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('frontofficeassociation')" :active="request()->routeIs('dashboard')">
+                        Associations
                     </x-nav-link>
                 </div>
+                <!-- Event Link -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('frontofficeevent')" :active="request()->routeIs('dashboard')">
+                        Events
+                    </x-nav-link>
+                </div>
+                <!-- Veterinarian Link -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('frontofficeveterinarian')" :active="request()->routeIs('dashboard')">
+                        Veterinarian
+                    </x-nav-link>
+                </div>
+                <!-- Rewards Link -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('frontofficerewards')" :active="request()->routeIs('dashboard')">
+                        Rewards
+                    </x-nav-link>
+                </div>
+                <!-- Vaccines Link -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('frontofficevaccine')" :active="request()->routeIs('dashboard')">
+                        Vaccines
+                    </x-nav-link>
+                </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
@@ -38,8 +63,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -80,8 +104,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
