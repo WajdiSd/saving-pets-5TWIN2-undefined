@@ -85,6 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Sterilization
     Route::get('/frontoffice/veterinarian', [\App\Http\Controllers\backoffice\Sterilization\BackVetoController::class, 'front'])->name('frontofficeveterinarian');
     Route::get('/frontoffice/vaccine', [\App\Http\Controllers\backoffice\Vaccination\VaccineController::class, 'front'])->name('frontofficevaccine');
+    Route::get('/frontoffice/local', [\App\Http\Controllers\backoffice\Local\LocalController::class, 'front'])->name('frontofficelocal');
 });
 
 
