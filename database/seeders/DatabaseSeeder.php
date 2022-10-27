@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
             SterilizationSeeder::class,
             CreateAdminUserSeeder::class,
             PetSeeder::class,
+            TypeRewardsSeeder::class,
+
         ]);
     }
 }
