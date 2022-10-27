@@ -64,6 +64,13 @@ class LocalController extends Controller
         return redirect('/backoffice/locals')->with('success', 'Local Created');
     }
 
+    public function front()
+    {
+        $listelocal = Local::all();
+        $listelocal = \App\Models\Local::with(['enclos'])->get();
+        return view('content.frontoffice.Local.index', compact("listelocal"));
+    }
+
 
     /**
      * Show the form for editing the specified resource.
