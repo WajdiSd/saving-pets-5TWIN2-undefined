@@ -40,7 +40,7 @@
                     <!-- Session Status -->
                     <x-auth-session-status class="mb-4" :status="session('status')" />
                     <a href="{{url('/register')}}" style="color: green">
-                        <button type="button" class="btn btn-success" style="float: right;">Create an account</button>
+                        <button type="button" class="btn" style="float: right;">Create an account</button>
                     </a>
                     </br>
                     <form method="POST" action="{{ route('login') }}">

@@ -19,7 +19,11 @@
             <div class="col-sm-10">
               <select readonly class="form-select" id="pet_id" name="pet_id">
                 <option value="{{ $sterilization->pet_id }}">
-                  {{ $sterilization->pet->name }}
+                  @if (empty($sterilization->pet))
+                  _
+                  @else
+                  {{$sterilization->pet->name}}
+                  @endif
                 </option>
                 @foreach($pets as $pet)
                 <option value="{{ $pet->id }}">
@@ -117,7 +121,7 @@
 
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-success">Update</button>
+              <button type="submit" class="btn btn-outline-primary">Update</button>
             </div>
           </div>
         </form>
@@ -128,6 +132,6 @@
 
 <p></p>
 <a href="{{ route('sterilization.index') }}">
-  <button type="button" class="btn btn-secondary" style="float: left;">Back to list</button>
+  <button type="button" class="btn btn-outline-secondary" style="float: left;">Back to list</button>
 </a>
 @endsection

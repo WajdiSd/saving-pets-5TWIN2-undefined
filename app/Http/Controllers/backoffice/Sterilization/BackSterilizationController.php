@@ -9,8 +9,15 @@ class BackSterilizationController extends Controller
 {
     public function index()
     {
-        $listeSterilizations = \App\Models\Sterilization::with(['pet'])->get();
-        return view('content.backoffice.Sterilization.index', compact("listeSterilizations"));
+        $listeSterilizations = \App\Models\Sterilization::with(['pet'])->orderBy('date', 'DESC')->get();
+        $listePet = \App\Models\Pet::all();
+        $listeNonSterPet = \App\Models\Pet::doesntHave('sterilization')->get();
+
+        $pettotal = count($listePet);
+        $nonSterNumber = count($listeNonSterPet);
+        $sterNumber = $pettotal - $nonSterNumber;
+        $percentageSter = $sterNumber * 100 / $pettotal;
+        return view('content.backoffice.Sterilization.index', compact('listeSterilizations', 'nonSterNumber', 'sterNumber', 'percentageSter'));
     }
 
     public function create()
