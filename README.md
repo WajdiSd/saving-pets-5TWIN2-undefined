@@ -21,7 +21,7 @@ We used MySQL as a database and phpMyAdmin to manage it.
 ```sh
   php artisan db:seed
   ```
-4.  
+4. install mix depedencies
 ```sh
   npm install && npm run dev
 ```
@@ -30,7 +30,7 @@ We used MySQL as a database and phpMyAdmin to manage it.
   php artisan serve
 ```
 6. open the browser and go to 
-http://localhost:8080/
+http://localhost:8000/
 
 
 ## DOCUMENTATION
